@@ -44,7 +44,7 @@ if (token === null) {
 
   let data = parseJWT(token);
   let type =
-    data["https://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+    data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
   if (type === "Pharmacy") {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
@@ -126,7 +126,7 @@ if (token === null) {
 }
 
 document.querySelector("body").insertAdjacentHTML(
-  "afterbegin",
+  "beforeend",
   `<div id="notification" class="notification hidden">
         <p id="notification-message">Your item has been added to the cart!</p>
         <button id="notification-close" class="notification-close">✖</button>
