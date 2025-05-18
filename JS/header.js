@@ -99,7 +99,7 @@ if (token === null) {
         <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
             <ul class="nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Add Company</a></li>
+                <li><a href="company.html" class="active">Add Company</a></li>
                 <li><a href="request.html" class="active">Requests</a></li>
             </ul>
             <div class="sign">
