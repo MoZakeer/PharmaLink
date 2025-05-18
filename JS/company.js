@@ -13,7 +13,7 @@ const validatePassword = function (password) {
   }
   return true;
 };
-document.querySelector(".Search").classList.add("active");
+document.querySelector(".company").classList.add("active");
 
 document
   .getElementById("signupForm")

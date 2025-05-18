@@ -1,4 +1,6 @@
 "use strict";
+document.querySelector(".requests").classList.add("active");
+
 // URLS
 const allRequestsURL = "https://pharmalink.runasp.net/api/requests";
 const acceptRequestURL = "https://pharmalink.runasp.net/api/account/register/";
@@ -86,10 +88,10 @@ requestsBody.addEventListener("click", async function (e) {
   if (btn.classList.contains("reject")) {
     await rejectRequest(`${rejectRequestURL}${id}`, token);
     row.remove();
-    showNotification("Request rejected!",false);
+    showNotification("Request rejected!", false);
   } else if (btn.classList.contains("accept")) {
     await acceptRequest(`${acceptRequestURL}${id}`, token);
     row.remove();
-    showNotification("Request accepted!",true);
+    showNotification("Request accepted!", true);
   }
 });
