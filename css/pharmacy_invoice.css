@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --main-color: #008682;
+}
+/* Start Global  */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* median Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Start page Content */
+main .container {
+  font-size: 1.6rem;
+}
+main table {
+  width: 100%;
+  margin-top: 2rem;
+  border-spacing: 0;
+}
+
+tr {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-left: 20px;
+}
+thead tr {
+  background-color: var(--main-color);
+  border-radius: 10px;
+}
+main table th {
+  font-size: 2.1rem;
+  padding: 2rem 0;
+  text-align: start;
+  color: #fff;
+  font-weight: normal;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+main tbody {
+  max-height: 400px;
+}
+main tbody tr {
+  border-bottom: 2px solid #aaa;
+  padding: 20px 0 20px 20px;
+}
+main tbody tr:last-child {
+  border-bottom: none;
+}
+
+main table td {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+main tbody td a {
+  color: #333;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.btn {
+  padding: 0.8rem 1.7rem;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+.invoice {
+  background-color: var(--main-color);
+  margin-left: 10rem;
+  padding: 1rem 2rem;
+}
+
+/* End page Content */

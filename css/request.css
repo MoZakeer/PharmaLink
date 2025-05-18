@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --main-color: #008682;
+}
+/* Start Global  */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* median Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Start page Content */
+main .container {
+  font-size: 1.6rem;
+  color: #333;
+}
+main table {
+  width: 100%;
+  margin-top: 2rem;
+  border-spacing: 0;
+}
+main table tr {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr;
+  font-size: 2.1rem;
+}
+main thead tr {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5rem;
+}
+main table th {
+  text-align: start;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+main tbody tr {
+  padding: 3rem 2rem;
+  border-bottom: 2px solid #aaa;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+main table td a i {
+  font-size: 40px;
+  color: #dc3545;
+}
+
+main table td:last-child {
+  text-align: end;
+}
+.btn {
+  font-size: 1.9rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:first-child {
+  margin-right: 10px;
+}
+.accept {
+  background-color: var(--main-color);
+  
+}
+.accept:hover {
+  background-color: #045657;
+}
+
+.reject {
+  background-color: #dc3545;
+}
+.reject:hover {
+  background-color: rgb(153, 29, 41);
+}
+/* End page Content */

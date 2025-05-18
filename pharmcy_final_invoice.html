@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- normlize css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- icons -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Style css -->
+  <link rel="stylesheet" href="css/Parmacy_final_invoice.css">
+  <!-- Header css -->
+  <link rel="stylesheet" href="css/header.css">
+  <!-- Font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <title>Invoice</title>
+</head>
+
+<body>
+  <!-- Start Main Page -->
+  <main class="container">
+    <div class="pharmacy-info">
+      <div class="label-name">
+        <span class="label">Name: </span>
+        <span class="name">El-Rahma</span>
+      </div>
+      <div class="label-phone">
+        <span class="label">Phone:</span>
+        <span class="phone">01096639622</span>
+      </div>
+      <div class="label-email">
+        <span class="label">Pharmacy License:</span>
+        <span class="email">El-Rahma@gmail.com</span>
+      </div>
+      <div class="label-address">
+        <span class="label">Address:</span>
+        <span class="address">Qena </span>
+      </div>
+    </div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Medicine</th>
+            <th>Quantity</th>
+            <th>price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody class="invoice-body">
+          <tr>
+            <td>congestal</td>
+            <td>5</td>
+            <td>50</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>congestal</td>
+            <td class="number">5</td>
+            <td class="number">50</td>
+            <td class="number">250</td>
+          </tr>
+          <tr>
+            <td>congestal</td>
+            <td>5</td>
+            <td>50</td>
+            <td>250</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="total-price">
+      <p class="label">total:</p>
+      <p class="total">400$</p>
+    </div>
+    <button class="cancel">Cancel</button>
+  </main>
+  <!-- End Main Page -->
+  <script src="JS/header.js"></script>
+  <script src="JS/pharmcy_final_invoice.js"></script>
+
+</body>
+
+</html>

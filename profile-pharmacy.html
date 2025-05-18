@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Profile</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/edit-buttom.css" />
+    <link rel="stylesheet" href="css/profile-main.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="user-profile">
+      <div class="user-pic">
+        <div class="container-pic">
+          <img
+            src="images/"
+            alt="Not Found"
+            class="profile-image image-frame"
+          />
+        </div>
+        <input type="file" id="file-upload" hidden />
+        <label for="file-upload" class="custom-file-upload"
+          ><i class="fa-solid fa-pen-to-square"></i
+        ></label>
+      </div>
+      <div class="user-details">
+        <dev class="info">
+          <div class="item">
+            <div class="item-one">Pharmacy Name</div>
+            <div class="item-two" id="ph-name">EL-Rahma Pharmacy</div>
+          </div>
+          <div class="item">
+            <div class="item-one">Doctor Name</div>
+            <div class="item-two" id="dr-name">Omar Mohamed</div>
+          </div>
+          <div class="item">
+            <div class="item-one">Phone</div>
+            <button class="edit edit-phone">
+              Edit
+              <svg viewBox="0 0 512 512" class="svg">
+                <path
+                  d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
+                ></path>
+              </svg>
+            </button>
+            <button class="save con-phone hidden">
+              <span class="IconContainer">
+                <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+                  <path
+                    d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                  ></path>
+                </svg>
+              </span>
+              <p class="text">Save</p>
+            </button>
+            <div class="item-two" id="phone">01151514239</div>
+            <input
+              type="text"
+              placeholder="Enter new phone number"
+              class="edit-input hidden"
+              id="new-phone"
+            />
+          </div>
+          <div class="item">
+            <div class="item-one">Address</div>
+            <div class="item-two" id="address">Qena</div>
+          </div>
+          <div class="item">
+            <div class="item-one">Email</div>
+            <div class="item-two" id="email">El-Rahma@gmail.com</div>
+          </div>
+          <div class="item">
+            <div class="item-one">Pharmacy License</div>
+            <div class="item-two" id="lic">0530082643782</div>
+          </div>
+          <div class="item pass">
+            <div class="item-one">Password</div>
+            <button class="edit edit-password">
+              Edit
+              <svg viewBox="0 0 512 512" class="svg">
+                <path
+                  d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
+                ></path>
+              </svg>
+            </button>
+            <button class="save con-password hidden">
+              <span class="IconContainer">
+                <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+                  <path
+                    d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                  ></path>
+                </svg>
+              </span>
+              <p class="text">Save</p>
+            </button>
+            <div class="item-two" id="password">********</div>
+            <input
+              type="password"
+              placeholder="Enter current password"
+              class="edit-input hidden"
+              id="current-password"
+            />
+            <input
+              type="password"
+              placeholder="Enter new password"
+              class="edit-input hidden"
+              id="new-password"
+            />
+            <input
+              type="password"
+              placeholder="Enter new password again"
+              class="edit-input hidden"
+              id="confirm-password"
+            />
+          </div>
+        </dev>
+        <dev class="about">
+          <div class="item-tree">About</div>
+          <button class="edit edit-about">
+            Edit
+            <svg viewBox="0 0 512 512" class="svg">
+              <path
+                d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
+              ></path>
+            </svg>
+          </button>
+          <button class="save con-about hidden">
+            <span class="IconContainer">
+              <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+                <path
+                  d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                ></path>
+              </svg>
+            </span>
+            <p class="text">Save</p>
+          </button>
+          <textarea class="about-content" readonly></textarea>
+        </dev>
+      </div>
+    </div>
+    <div class="wrapper hidden">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+    </div>
+    <script src="JS/header.js"></script>
+    <script src="JS/profile-pharmacy.js"></script>
+    <script src="JS/Edit/edit-phone.js"></script>
+    <script src="JS/Edit/edit-password.js"></script>
+    <script src="JS/Edit/edit-photo.js"></script>
+    <script src="JS/Edit/edit-about.js"></script>
+  </body>
+</html>

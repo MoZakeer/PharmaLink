@@ -1,0 +1,85 @@
+
+body {
+  background-color: #333;
+  font-family: Arial, sans-serif;
+}
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.small {
+  font-size: 14px;
+  color: #4fa6bc;
+}
+.signup-container {
+  max-width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.form-control {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #d9d9d9;
+}
+.form-section {
+  padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+a {
+  text-decoration: none;
+}
+
+.image-section {
+  background-image: url("../images/back5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.custom-btn {
+  background-color: #4fa6bc !important;
+  color: white !important;
+  font-size: 22px;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 0;
+  margin: 30px 60px 0 80px !important;
+  width: 80%;
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background-color: #008c7a;
+}
+input {
+  border-radius: 2rem;
+  height: 2.5rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .image-section {
+    display: block;
+  }
+
+  .form-section {
+    padding: 3rem;
+  }
+}
+label{
+  font-size: 18px !important;
+  margin-bottom: 10px !important;
+}
+input{
+  font-size: 14px !important;
+  padding:  20px !important;
+  border-radius: 10px !important;
+}

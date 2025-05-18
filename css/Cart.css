@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --main-color: #008682;
+}
+/* Start Global  */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* median Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Start page Content */
+main {
+  padding-top: 2rem;
+}
+main h1 {
+  /* width: calc(100% - 150px); */
+  padding: 2rem;
+  color: #fff;
+  font-size: 2.5rem;
+  border-radius: 1rem;
+  background-color: var(--main-color);
+}
+main a.continue-shopping {
+  display: block;
+  width: fit-content;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  color: #333;
+  border: 1px solid #000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+main a.continue-shopping:hover {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+}
+/* Start table */
+main table {
+  width: 100%;
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+
+main .table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #aaa;
+  padding-bottom: 1.5rem;
+  color: #333;
+}
+main .table-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}
+main .table-row:not(:first-of-type) {
+  padding-top: 1.5rem;
+}
+main .table-row .product-price {
+  font-weight: 600;
+  font-size: 2rem;
+  width: 50px;
+}
+main .product-quantity {
+  display: flex;
+}
+main .product-quantity .number {
+  font-size: 3rem;
+  margin: 0 1.5rem;
+  font-weight: 600;
+}
+main .porduct-name {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+main .product-quantity .btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: none;
+  background-color: #d9d9d9;
+  color: #333;
+  cursor: pointer;
+}
+main .product-quantity .btn:active {
+  background-color: #c5bfbf;
+}
+main .product-quantity .decrease {
+  border-radius: 1rem 0 0 1rem;
+}
+main .product-quantity .increase {
+  border-radius: 0 1rem 1rem 0;
+}
+main .img {
+  width: 70px;
+  height: 70px;
+}
+
+/* End table */
+.total-price {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.summary {
+  display: block;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.3s;
+}
+.summary:hover {
+  background-color: #045657;
+}
+/* End page Content */
+
+/* Notification Styles */
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  justify-self: center;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}

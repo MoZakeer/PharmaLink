@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- normlize css -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- icons -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- Style css -->
+  <link rel="stylesheet" href="css/Orders.css">
+  <!--  -->
+  <link rel="stylesheet" href="css/filter.css">
+  <!-- header css -->
+  <link rel="stylesheet" href="css/header.css">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+  <title>Invoices</title>
+</head>
+
+<body>
+
+  <!-- Start Main Page -->
+  <main>
+    <div class="container">
+      <div class="container">
+        <div class="order-status-buttons">
+          <button class="btns btn-pending" data-status="pending">Pending</button>
+          <button class="btns btn-shipped" data-status="shipped">Shipped</button>
+          <button class="btns btn-delivered" data-status="delivered">Delivered</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Pharmacy</th>
+              <th>Doctor</th>
+              <th>Phone Number</th>
+              <th>Address</th>
+              <th>Date</th>
+              <th>State</th>
+              <th>Invoice</th>
+            </tr>
+          </thead>
+          <tbody class="invoices-body">
+          </tbody>
+        </table>
+      </div>
+  </main>
+  <!-- End Main Page -->
+  <script src="JS/header.js"></script>
+  <script src="JS/Orders.js"></script>
+  <script src="JS/company_filter.js"></script>
+
+</body>
+
+</html>

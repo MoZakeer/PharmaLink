@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --main-color: #008682;
+}
+/* Start Global  */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* Small Screen */
+@media (min-width: 650px) {
+  .container {
+    width: 680px;
+  }
+}
+
+/* median Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* End Global  */
+
+body {
+  font-size: 14px;
+}
+#tableBody {
+  text-align: center;
+}
+#reg {
+  background-color: #cdcdcd;
+  color: black;
+}
+header .sign #reg:hover {
+  background-color: #929b9b;
+}
+.upload-btn {
+  background-color: #eaa700;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 1rem;
+}
+.upload-label {
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.update-btn {
+  background-color: #00a896;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+input {
+  font-size: 14px !important;
+}
+.table {
+  font-size: 16px;
+}
+thead {
+  border-bottom: 2px solid #aaa !important;
+  margin-top: 1rem !important;
+  font-size: 18px !important;
+  margin-bottom: 1rem !important;
+}
+
+.disc {
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 200px;
+}
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.create-btn {
+  background-color: #00a896;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 1rem;
+}
+.create-btn:hover,
+.search-btn:hover {
+  background-color: #045657;
+}
+.search-btn {
+  background-color: #00a896;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th,
+tr,
+td {
+  border: none;
+}
+thead {
+  border-bottom: 2px solid black;
+  margin-top: 1rem;
+}
+th {
+  margin: 1rem 0 !important;
+  height: 40px !important;
+}
+input[type="text"],
+input[type="number"],
+input[type="url"] {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+button {
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+  padding: 10px;
+}
+table {
+  margin-top: 3rem;
+  border-collapse: collapse;
+  border: none;
+}
