@@ -1,6 +1,5 @@
 "use strict";
 document.querySelector(".requests").classList.add("active");
-
 // URLS
 const allRequestsURL = "https://pharmalink.runasp.net/api/requests";
 const acceptRequestURL = "https://pharmalink.runasp.net/api/account/register/";
