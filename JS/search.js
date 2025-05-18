@@ -5,7 +5,7 @@ const createPrice = function (totalPrice) {
   }).format(totalPrice);
   return price;
 };
-document.querySelector(".Search").classList.add("active");
+// document.querySelector(".Search").classList.add("active");
 let added = [];
 
 async function getcard() {
