@@ -8,7 +8,7 @@ function parseJWT(token) {
     return JSON.parse(jsonPayload);
 }
 let data = parseJWT(token);
-if (userName === null) userName = data["https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
+if (userName === null) userName = data["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
 else {
     const pass = document.querySelector('.pass');
     const editPhone = document.querySelector('.edit-phone');

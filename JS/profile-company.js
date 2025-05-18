@@ -26,7 +26,7 @@ function parseJWT(token) {
 }
 let data = parseJWT(token);
 if (userName === null) {
-  userName = data["https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
+  userName = data["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
   const ratingContainer = document.querySelector(".rating-container");
   const commentForm = document.querySelector(".comment-form");
   ratingContainer.classList.add("hidden");
