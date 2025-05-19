@@ -45,7 +45,7 @@ async function getUsers() {
   let img;
   if (data["pharmacyImagePath"]) {
     img =
-      "http://pharmalink.runasp.net/" +
+      "https://pharmalink.runasp.net/" +
       data["pharmacyImagePath"].slice(
         data["pharmacyImagePath"].indexOf("uploads")
       );

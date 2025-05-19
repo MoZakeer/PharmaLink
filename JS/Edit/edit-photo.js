@@ -6,7 +6,7 @@ async function changePhoto(formData) {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(formData),
+      body: formData,
     }
   );
   location.reload();
