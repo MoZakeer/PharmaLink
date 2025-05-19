@@ -1,28 +1,28 @@
-'use strict';
+"use strict";
 
 // ELEMENTS
-const labelPharmacyName = document.querySelector('.name');
-const labelPharmacyPhone = document.querySelector('.phone');
-const labelPharmacyEmail = document.querySelector('.email');
-const labelPharmacyAddress = document.querySelector('.address');
-const invoiceBody = document.querySelector('.invoice-body');
-const labelTotalPrice = document.querySelector('.total');
-const btnCancel = document.querySelector('.cancel');
+const labelPharmacyName = document.querySelector(".name");
+const labelPharmacyPhone = document.querySelector(".phone");
+const labelPharmacyEmail = document.querySelector(".email");
+const labelPharmacyAddress = document.querySelector(".address");
+const invoiceBody = document.querySelector(".invoice-body");
+const labelTotalPrice = document.querySelector(".total");
+const btnCancel = document.querySelector(".cancel");
 // GET ORDER ID FOR CURRENT PHARMACY...
 // Get orderId from URL
 const params = new URLSearchParams(window.location.search);
-const orderId = params.get('orderId');
-window.history.pushState({}, '', window.location.pathname);
+const orderId = params.get("orderId");
+window.history.pushState({}, "", window.location.pathname);
 // URL'S
-const pharmacyInoiceURL = 'https://pharmalink.runasp.net/api/Order/Invoice/';
-const cancelOrderURL = 'https://pharmalink.runasp.net/api/Order/Cancel/';
+const pharmacyInoiceURL = "https://pharmalink.runasp.net/api/Order/Invoice/";
+const cancelOrderURL = "https://pharmalink.runasp.net/api/Order/Cancel/";
 let cartInfo;
 //  GET Order Summary
 async function getInvoiceSummary(url, token) {
   const response = await fetch(url, {
-    method: 'GET',
+    method: "GET",
     headers: {
-      Authorization: 'Bearer ' + token,
+      Authorization: "Bearer " + token,
     },
   });
 
@@ -36,9 +36,9 @@ async function getInvoiceSummary(url, token) {
 // CANCEL ORDER
 async function cancelOrder(url, token) {
   const response = await fetch(url, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      Authorization: 'Bearer ' + token,
+      Authorization: "Bearer " + token,
     },
   });
 }
@@ -46,15 +46,15 @@ async function cancelOrder(url, token) {
 
 // Update Price...
 const createPrice = function (totalPrice) {
-  const price = new Intl.NumberFormat('De', {
-    style: 'currency',
-    currency: 'EGP',
+  const price = new Intl.NumberFormat("De", {
+    style: "currency",
+    currency: "EGP",
   }).format(+totalPrice);
   return price;
 };
 // Display all medicines...
 const displayMedicines = function (medicines) {
-  invoiceBody.innerHTML = '';
+  invoiceBody.innerHTML = "";
   medicines.forEach(function (medicine) {
     const { name, unitPrice, count, totalPrice } = medicine;
     const html = ` 
@@ -64,7 +64,7 @@ const displayMedicines = function (medicines) {
             <td class="number">${createPrice(unitPrice)}</td>
             <td class="number">${createPrice(totalPrice)}</td>
           </tr>`;
-    invoiceBody.insertAdjacentHTML('afterbegin', html);
+    invoiceBody.insertAdjacentHTML("afterbegin", html);
   });
 };
 // Display Pharmacy Information...
@@ -73,11 +73,13 @@ const displayPharmacyInfo = function ({
   phone,
   pharmacyLicense,
   city,
+  state,
+  street,
 }) {
   labelPharmacyName.textContent = pharmacyName;
   labelPharmacyPhone.textContent = phone;
   labelPharmacyEmail.textContent = pharmacyLicense;
-  labelPharmacyAddress.textContent = city;
+  labelPharmacyAddress.textContent = `${city} /${state} /${street}`;
 };
 // Display Total Price
 const displayTotalPrice = function (totalPrice) {
@@ -96,7 +98,8 @@ async function displayInvoiceInfo() {
     city,
     medicines,
     totalPriceOrder,
-    statusOrder,
+    state,
+    street,
   } = invoice;
   cartInfo = {
     pharmacyName,
@@ -112,15 +115,17 @@ async function displayInvoiceInfo() {
     phone,
     pharmacyLicense,
     city,
+    state,
+    street,
   });
   displayCancelBtn(statusOrder);
 }
 displayInvoiceInfo();
 ////////////////////Cancel Button/////////////////
 const displayCancelBtn = function (state) {
-  if (state !== 'pending') btnCancel.classList.add('hidden');
+  if (state !== "pending") btnCancel.classList.add("hidden");
 };
-btnCancel.addEventListener('click', async function (e) {
+btnCancel.addEventListener("click", async function (e) {
   await cancelOrder(`${cancelOrderURL}${orderId}`, token);
-  window.location.href = 'pharmacy_invoice.html';
+  window.location.href = "pharmacy_invoice.html";
 });

@@ -39,8 +39,8 @@ async function getInvoiceSummary(url, token) {
 const createPrice = function (totalPrice) {
   const price = new Intl.NumberFormat("DE", {
     style: "currency",
-    currency: "USD",
-  }).format(+totalPrice);
+    currency: "EGP",
+  }).format(totalPrice);
   return price;
 };
 // Display all medicines...
@@ -64,11 +64,13 @@ const displayPharmacyInfo = function ({
   phone,
   pharmacyLicense,
   city,
+  state,
+  street,
 }) {
   labelPharmacyName.textContent = pharmacyName;
   labelPharmacyPhone.textContent = phone;
   labelPharmacyEmail.textContent = pharmacyLicense;
-  labelPharmacyAddress.textContent = city;
+  labelPharmacyAddress.textContent = `${city} /${state} /${street}`;
 };
 // Display Total Price
 const displayTotalPrice = function (totalPrice) {
@@ -87,7 +89,10 @@ async function displayInvoiceInfo() {
     city,
     medicines,
     totalPriceOrder,
+    state,
+    street,
   } = invoice;
+  console.log(invoice);
   cartInfo = {
     pharmacyName,
     phone,
@@ -102,6 +107,8 @@ async function displayInvoiceInfo() {
     phone,
     pharmacyLicense,
     city,
+    state,
+    street,
   });
 }
 displayInvoiceInfo();
