@@ -1,10 +1,10 @@
 "use strict";
 
 // ELEMENTS
-const labelPharmacyName = document.querySelector(".name");
-const labelPharmacyPhone = document.querySelector(".phone");
-const labelPharmacyEmail = document.querySelector(".email");
-const labelPharmacyAddress = document.querySelector(".address");
+const labelCompanyName = document.querySelector(".name");
+const labelCompanyPhone = document.querySelector(".phone");
+const labelOrderDate = document.querySelector(".email");
+const labelCompanyAddress = document.querySelector(".address");
 const invoiceBody = document.querySelector(".invoice-body");
 const labelTotalPrice = document.querySelector(".total");
 const btnCancel = document.querySelector(".cancel");
@@ -12,11 +12,9 @@ const btnCancel = document.querySelector(".cancel");
 // Get orderId from URL
 const params = new URLSearchParams(window.location.search);
 const orderId = params.get("orderId");
-window.history.pushState({}, "", window.location.pathname);
 // URL'S
 const pharmacyInoiceURL = "https://pharmalink.runasp.net/api/Order/Invoice/";
 const cancelOrderURL = "https://pharmalink.runasp.net/api/Order/Cancel/";
-let cartInfo;
 //  GET Order Summary
 async function getInvoiceSummary(url, token) {
   const response = await fetch(url, {
@@ -52,6 +50,15 @@ const createPrice = function (totalPrice) {
   }).format(+totalPrice);
   return price;
 };
+// Formating date
+const dateFormat = function (orderDate) {
+  const date = new Intl.DateTimeFormat(navigator.language, {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(new Date(orderDate));
+  return date;
+};
 // Display all medicines...
 const displayMedicines = function (medicines) {
   invoiceBody.innerHTML = "";
@@ -69,17 +76,17 @@ const displayMedicines = function (medicines) {
 };
 // Display Pharmacy Information...
 const displayPharmacyInfo = function ({
-  pharmacyName,
-  phone,
-  pharmacyLicense,
-  city,
-  state,
-  street,
+  companyName,
+  companyPhone,
+  orderDate,
+  companyCity,
+  companyState,
+  companyStreet,
 }) {
-  labelPharmacyName.textContent = pharmacyName;
-  labelPharmacyPhone.textContent = phone;
-  labelPharmacyEmail.textContent = pharmacyLicense;
-  labelPharmacyAddress.textContent = `${city} /${state} /${street}`;
+  labelCompanyName.textContent = companyName;
+  labelCompanyPhone.textContent = companyPhone;
+  labelOrderDate.textContent = dateFormat(orderDate);
+  labelCompanyAddress.textContent = `${companyCity} /${companyState} /${companyStreet}`;
 };
 // Display Total Price
 const displayTotalPrice = function (totalPrice) {
@@ -92,31 +99,27 @@ async function displayInvoiceInfo() {
     token
   );
   const {
-    pharmacyName,
-    phone,
-    pharmacyLicense,
-    city,
+    companyName,
+    companyPhone,
+    orderDate,
     medicines,
+    companyCity,
+    companyState,
+    companyStreet,
     totalPriceOrder,
-    state,
-    street,
+    statusOrder,
   } = invoice;
-  cartInfo = {
-    pharmacyName,
-    phone,
-    city,
-    totalPriceOrder,
-    medicines,
-  };
+
   displayMedicines(medicines);
   displayTotalPrice(totalPriceOrder);
   displayPharmacyInfo({
-    pharmacyName,
-    phone,
-    pharmacyLicense,
-    city,
-    state,
-    street,
+    companyName,
+    companyPhone,
+    orderDate,
+    medicines,
+    companyCity,
+    companyState,
+    companyStreet,
   });
   displayCancelBtn(statusOrder);
 }

@@ -9,6 +9,13 @@ html {
 }
 :root {
   --main-color: #008682;
+  --hover-color: #045657;
+  --light-gray: #d9d9d9;
+  --dark-gray: #333;
+  --white: #fff;
+  --font-size-small: 1.6rem;
+  --font-size-medium: 2rem;
+  --font-size-large: 2.1rem;
 }
 /* Start Global  */
 .container {
@@ -105,27 +112,35 @@ main .table-row .product-price {
 }
 main .product-quantity {
   display: flex;
+  border: 1px solid #ccc;
+  width: fit-content;
+  border-radius: 10px;
+  overflow: hidden;
 }
 main .product-quantity .number {
-  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 1.5rem;
+  font-size: 2.5rem;
   font-weight: 600;
+  color: var(--hover-color);
 }
 main .porduct-name {
   text-transform: capitalize;
   font-weight: 500;
 }
 main .product-quantity .btn {
-  padding: 0.5rem 1.5rem;
-  font-size: 2.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   border: none;
-  background-color: #d9d9d9;
-  color: #333;
+  background-color: #ecfae5;
+  color: var(--main-color);
   cursor: pointer;
 }
 main .product-quantity .btn:active {
-  background-color: #c5bfbf;
+  background-color: #fffdec;
 }
 main .product-quantity .decrease {
   border-radius: 1rem 0 0 1rem;
@@ -136,16 +151,21 @@ main .product-quantity .increase {
 main .img {
   width: 70px;
   height: 70px;
+  border-radius: 1rem;
 }
 
 /* End table */
 .total-price {
-  font-size: 2.2rem;
+  color: var(--main-color);
+  font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 2rem;
   display: flex;
   justify-content: space-around;
+}
+.label {
+  color: #333;
 }
 .summary {
   display: block;
@@ -165,17 +185,16 @@ main .img {
   transition: 0.3s;
 }
 .summary:hover {
-  background-color: #045657;
+  background-color: var(--hover-color);
 }
 /* End page Content */
-
-/* Notification Styles */
 
 .delete-button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgb(20, 20, 20);
+  /* background-color: rgb(20, 20, 20); */
+  background-color: #ff4545;
   border: none;
   font-weight: 600;
   display: flex;

@@ -112,51 +112,7 @@ header .sign a span {
 /* End header */
 /* message */
 /* Notification Styles */
-.notification {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #c91432;
-  color: #000000;
-  padding: 1.5rem 2rem;
-  font-size: var(--font-size-medium);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.962);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  max-width: 90%;
-  width: 500px;
-  opacity: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
 
-.notification.hidden {
-  opacity: 0;
-  transform: translateX(-50%) translateY(-20px);
-  pointer-events: none;
-}
-
-.notification-close {
-  background: none;
-  border: none;
-  color: var(--white);
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.notification-close:hover {
-  color: var(--hover-color);
-}
-.notification p {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--white);
-}
 .Btn {
   padding-left: 14px;
   display: flex;
@@ -224,4 +180,49 @@ header .sign a span {
 /* button click effect*/
 .Btn:active {
   transform: translate(2px, 2px);
+}
+.notification {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c91432;
+  color: #000000;
+  padding: 1.5rem 2rem;
+  font-size: var(--font-size-medium);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.962);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 90%;
+  width: 500px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
+  pointer-events: none;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.notification-close:hover {
+  color: var(--hover-color);
+}
+.notification p {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--white);
 }

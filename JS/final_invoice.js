@@ -3,7 +3,7 @@
 // ELEMENTS
 const labelPharmacyName = document.querySelector(".name");
 const labelPharmacyPhone = document.querySelector(".phone");
-const labelPharmacyEmail = document.querySelector(".email");
+const labelOrderDate = document.querySelector(".email");
 const labelPharmacyAddress = document.querySelector(".address");
 const invoiceBody = document.querySelector(".invoice-body");
 const labelTotalPrice = document.querySelector(".total");
@@ -11,7 +11,6 @@ const btnPlaceOrder = document.querySelector(".place-order");
 // GET ORDER ID FOR CURRENT PHARMACY...
 const params = new URLSearchParams(window.location.search);
 const orderId = params.get("orderId");
-window.history.pushState({}, "", window.location.pathname);
 // URL'S
 const pharmacyInoiceURL = "https://pharmalink.runasp.net/api/Order/Invoice/";
 let cartInfo;
@@ -43,6 +42,15 @@ const createPrice = function (totalPrice) {
   }).format(totalPrice);
   return price;
 };
+// Formating date
+const dateFormat = function (orderDate) {
+  const date = new Intl.DateTimeFormat(navigator.language, {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(new Date(orderDate));
+  return date;
+};
 // Display all medicines...
 const displayMedicines = function (medicines) {
   invoiceBody.innerHTML = "";
@@ -61,16 +69,16 @@ const displayMedicines = function (medicines) {
 // Display Pharmacy Information...
 const displayPharmacyInfo = function ({
   pharmacyName,
-  phone,
-  pharmacyLicense,
-  city,
-  state,
-  street,
+  pharmacyPhone,
+  pharmacyCity,
+  pharmacyState,
+  pharmacyStreet,
+  orderDate,
 }) {
   labelPharmacyName.textContent = pharmacyName;
-  labelPharmacyPhone.textContent = phone;
-  labelPharmacyEmail.textContent = pharmacyLicense;
-  labelPharmacyAddress.textContent = `${city} /${state} /${street}`;
+  labelPharmacyPhone.textContent = pharmacyPhone;
+  labelOrderDate.textContent = dateFormat(orderDate);
+  labelPharmacyAddress.textContent = `${pharmacyCity} /${pharmacyState} /${pharmacyStreet}`;
 };
 // Display Total Price
 const displayTotalPrice = function (totalPrice) {
@@ -83,32 +91,36 @@ async function displayInvoiceInfo() {
     token
   );
   const {
+    orderID,
     pharmacyName,
-    phone,
-    pharmacyLicense,
-    city,
-    medicines,
+    pharmacyPhone,
+    pharmacyCity,
+    pharmacyState,
+    pharmacyStreet,
+    orderDate,
     totalPriceOrder,
-    state,
-    street,
+    medicines,
   } = invoice;
   console.log(invoice);
   cartInfo = {
     pharmacyName,
-    phone,
-    city,
+    pharmacyPhone,
+    pharmacyCity,
+    pharmacyState,
+    pharmacyStreet,
+    orderDate,
     totalPriceOrder,
-    medicines,
+    medicines,  
   };
   displayMedicines(medicines);
   displayTotalPrice(totalPriceOrder);
   displayPharmacyInfo({
     pharmacyName,
-    phone,
-    pharmacyLicense,
-    city,
-    state,
-    street,
+    pharmacyPhone,
+    pharmacyCity,
+    pharmacyState,
+    pharmacyStreet,
+    orderDate,
   });
 }
 displayInvoiceInfo();
