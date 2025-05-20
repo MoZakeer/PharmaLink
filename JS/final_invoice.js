@@ -50,7 +50,6 @@ const dateFormat = function (orderDate) {
     year: "numeric",
     hour: "2-digit",
     minute: "2-digit",
-    second:'2-digit'
   }).format(new Date(orderDate));
   return date;
 };
