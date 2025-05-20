@@ -164,17 +164,11 @@ containerItems.addEventListener("click", async function (e) {
       updatedData
     );
     if (btnIncrease) {
-      if (response.success) labelNumber.textContent = updatedData.count;
-      else {
-        showNotification(response.message, false);
-      }
-    } else if (btnDecrease) {
-      if (!updatedData.count) row.remove();
-      else labelNumber.textContent = updatedData.count;
+      if (!response.success) showNotification(response.message, false);
     }
-  } catch (error) {
-    console.log(error);
-  }
+
+    displayAllItems();
+  } catch (error) {}
 });
 btnSummary.addEventListener("click", function (e) {
   if (cartLength) window.location.href = "Company_final_invoice.html";
