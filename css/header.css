@@ -225,9 +225,8 @@
 }
 
 .Btn:hover .sign {
-  width: 30%;
+  width: 40%;
   transition-duration: 0.3s;
-  padding-left: 20px;
 }
 /* hover effect button's text */
 .Btn:hover .text-header {
