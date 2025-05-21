@@ -43,8 +43,7 @@ if (token === null) {
   }
 
   let data = parseJWT(token);
-  let type =
-    data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+  let type = data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
   if (type === "Pharmacy") {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
