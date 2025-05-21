@@ -69,7 +69,6 @@ main table {
   border-spacing: 0;
 }
 
-
 main table th {
   background-color: var(--main-color); /* Keeps the header background visible */
   color: var(--white); /* Ensures text is readable */
@@ -183,7 +182,8 @@ td a {
   display: flex;
   align-items: center;
   border: 2px solid var(--main-color);
-  box-shadow: 4px 4px var(--hover-color);
+  box-shadow: 0px 0px 4px 0px var(--main-color);
+  
   background-color: var(--main-color);
   border-radius: 10px;
   overflow: hidden;
