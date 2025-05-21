@@ -45,11 +45,11 @@ async function getUsers() {
   let img;
   if (data["pharmacyImagePath"]) {
     img =
-      "https://pharmalink.runasp.net/" +
+      "http://pharmalink.runasp.net/" +
       data["pharmacyImagePath"].slice(
         data["pharmacyImagePath"].indexOf("uploads")
       );
-      console.log(img);
+    console.log(img);
     document.querySelector(".profile-image").src = img;
   }
   return data;

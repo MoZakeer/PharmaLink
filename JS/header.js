@@ -43,7 +43,8 @@ if (token === null) {
   }
 
   let data = parseJWT(token);
-  let type = data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+  let type =
+    data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
   if (type === "Pharmacy") {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
@@ -56,7 +57,9 @@ if (token === null) {
 
       <nav>
         <ul class="nav">
-          <li class="mobile-only user-profile-header"><a href="profile-pharmacy.html">Profile</a></li>
+          <li class="mobile-only user-profile-header">
+          <a href="profile-pharmacy.html">Profile</a>
+          </li>
           <li><a href="#">Home</a></li>
           <li><a href="search.html" class='Search'>Search</a></li>
           <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
