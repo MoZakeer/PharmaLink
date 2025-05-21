@@ -49,64 +49,97 @@ if (token === null) {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-            <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="search.html" class='Search'>Search</a></li>
-                <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
-                <li><a href="Cart.html" class='cart'>🛒Cart</a></li>
-            </ul>
-            <div class="sign">
-                <a href="profile-pharmacy.html" class="user-profile-header">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span>Profile</span>
-                </a>
-                ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+    <div class="container">
+      <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+      <i class="fa-solid fa-bars menu-toggle"></i>
+
+      <nav>
+        <ul class="nav">
+          <li class="mobile-only user-profile-header"><a href="profile-pharmacy.html">Profile</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="search.html" class='Search'>Search</a></li>
+          <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
+          <li><a href="Cart.html" class='cart'>Cart</a></li>
+          <li class="mobile-only logout"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+
+      <ul class="sign">
+        <li>
+          <a href="profile-pharmacy.html" class="user-profile-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+          ${btnLogout}
+        </li>
+      </ul>
+    </div>
+  </header>`
     );
   } else if (type === "Company") {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-            <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#" class='home'>Home</a></li>
-                <li><a href="Orders.html" class='orders'>Orders</a></li>
-                <li><a href="products.html" class='products'>Product</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div class="sign">
-                <a href="profile-company.html" class="user-profile-header">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span>Profile</span>
-                </a>
-                ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+  <div class="container">
+    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <nav>
+      <ul class="nav">
+        <li class="mobile-only user-profile-header"><a href="profile-company.html">Profile</a></li>
+        <li><a href="#" class="home">Home</a></li>
+        <li><a href="Orders.html" class="orders">Orders</a></li>
+        <li><a href="products.html" class="products">Product</a></li>
+        <li><a href="#">About</a></li>
+        <li class="mobile-only logout"><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <ul class="sign">
+      <li>
+        <a href="profile-company.html" class="user-profile-header">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+      <li>
+        ${btnLogout}
+      </li>
+    </ul>
+  </div>
+</header>`
     );
   } else {
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-        <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="company.html" class="company">Add Company</a></li>
-                <li><a href="request.html" class="requests">Requests</a></li>
-            </ul>
-            <div class="sign">
-              ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+  <div class="container">
+    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="company.html" class="company">Add Company</a></li>
+        <li><a href="request.html" class="requests">Requests</a></li>
+        <li class="mobile-only logout"><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <ul class="sign">
+      <li>
+        ${btnLogout}
+      </li>
+    </ul>
+  </div>
+</header>`
     );
   }
   if (ok) {
@@ -154,3 +187,10 @@ function showNotification(message, ok = 2) {
     notification.classList.add("hidden");
   });
 }
+/////////////////////////////////////////////
+const menuToggle = document.querySelector(".main-header .menu-toggle");
+const nav = document.querySelector(".main-header nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
