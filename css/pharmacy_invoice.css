@@ -130,7 +130,6 @@ main tbody td a {
 
   main table {
     display: block;
-    overflow-x: auto;
     white-space: nowrap;
     width: 90%;
     margin-left: auto;
