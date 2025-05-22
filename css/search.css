@@ -62,7 +62,7 @@ body {
 
 /* Main Content */
 main .container {
-  margin: 15rem;
+  margin: 15rem auto;
   font-size: var(--font-size-small);
 }
 
@@ -159,36 +159,35 @@ td a {
     font-size: 32%;
   }
   main .container {
-    margin: 15rem 0;
     font-size: var(--font-size-small);
   }
 }
 @media (min-width: 768px) {
-  .search-container {
+  .search-container,
+  main .container {
     width: 750px;
   }
   main .container {
-    margin: 15rem 5rem;
     font-size: var(--font-size-small);
   }
 }
 
 @media (min-width: 992px) {
-  .search-container {
+  .search-container,
+  main .container {
     width: 970px;
   }
   main .container {
-    margin: 15rem 10rem;
     font-size: var(--font-size-small);
   }
 }
 
 @media (min-width: 1200px) {
-  .search-container {
+  .search-container,
+  main .container {
     width: 1170px;
   }
   main .container {
-    margin: 15rem;
     font-size: var(--font-size-small);
   }
 }
