@@ -115,7 +115,6 @@ if (token === null) {
         <li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
         <li><a href="products.html" class="products">Product</a></li>
-        <li><a href="#">About</a></li>
         <li class="mobile-only logout"><a href="#">Logout</a></li>
       </ul>
     </nav>
