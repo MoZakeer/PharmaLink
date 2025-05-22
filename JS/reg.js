@@ -32,6 +32,10 @@ async function register(event) {
   const confirmPassword = form.confirmPassword.value;
   const licenseNumber = form.licenseNumber.value.trim();
   const website = form.website.value.trim();
+  if (!/^\d+$/.test(phoneNumber) || phoneNumber.length !== 11) {
+    showNotification("the phone number is not valid", false);
+    return;
+  }
   if (!validatePassword(password, confirmPassword)) return;
   // Prepare request body
   const bodyParams = {
