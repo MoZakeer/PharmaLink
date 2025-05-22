@@ -116,7 +116,7 @@ ul {
 }
 .info {
   width: 65%;
-  min-height: 100rem;
+  min-height: 30rem;
   max-height: 120rem;
   display: flex;
   flex-direction: column;

@@ -4,94 +4,88 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+
 html {
   font-size: 62.5%;
 }
+
 :root {
   --main-color: #008682;
 }
-/* Start Global  */
+
+/* Global Container */
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-/* Small Screen */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1170px;
 }
 
-/* median Screen */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: 1.6rem;
 }
 
-/* Large Screen */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
 
-/* Start page Content */
+/* Table and Page Layout */
 main .container {
   font-size: 1.6rem;
 }
+
 main table {
   width: 100%;
   margin-top: 2rem;
   border-spacing: 0;
+  border-collapse: collapse;
 }
 
-tr {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  padding-left: 20px;
-}
 thead tr {
   background-color: var(--main-color);
   border-radius: 10px;
 }
-main table th {
-  font-size: 2.1rem;
-  padding: 2rem 0;
+
+main table th,
+main table td {
+  padding: 1.5rem;
   text-align: start;
-  color: #fff;
-  font-weight: normal;
+  vertical-align: middle;
   text-transform: capitalize;
+}
+
+main table th {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
-main tbody {
-  max-height: 400px;
+main table td {
+  font-size: 1.8rem;
+  color: #333;
 }
+
 main tbody tr {
-  border-bottom: 2px solid #aaa;
-  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #ccc;
 }
+
 main tbody tr:last-child {
   border-bottom: none;
 }
 
-main table td {
-  font-size: 2rem;
-  text-transform: capitalize;
-}
 main tbody td a {
   color: #333;
   font-weight: 500;
-  text-transform: capitalize;
 }
 
 .btn {
@@ -102,9 +96,10 @@ main tbody td a {
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s ease;
-  font-size: 16px;
-  text-transform: capitalize;
+  font-size: 1.6rem;
+  background-color: var(--main-color);
 }
+
 .btn:hover {
   opacity: 0.9;
   transform: translateY(-2px);
@@ -113,10 +108,84 @@ main tbody td a {
 .btn:active {
   transform: translateY(0);
 }
+
 .invoice {
   background-color: var(--main-color);
   margin-left: 10rem;
   padding: 1rem 2rem;
+  color: white;
 }
 
-/* End page Content */
+/* Responsive Design */
+
+/* Small Screen (Phones) */
+@media (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  main table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  main table th,
+  main table td {
+    font-size: 1.4rem;
+    padding: 1rem;
+    white-space: nowrap;
+  }
+
+  .btn {
+    width: auto;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+
+  .invoice {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+main table th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+main table th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+/* Medium Screens (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  html {
+    font-size: 55%;
+  }
+
+  .container {
+    width: 80%;
+    max-width: 750px;
+    padding: 0 15px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
