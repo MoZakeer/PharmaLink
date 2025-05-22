@@ -242,8 +242,8 @@
 
 /* ======= Mobile View (≤ 767px) ======= */
 @media (max-width: 767px) {
-  .main-header header {
-    height: 97px;
+  .main-header {
+    height: 70px;
     padding: 10px 0;
   }
 
@@ -255,6 +255,7 @@
 
   .main-header .logo {
     order: 1;
+    height: 65px;
   }
 
   .main-header nav {
