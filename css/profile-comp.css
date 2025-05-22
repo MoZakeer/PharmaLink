@@ -83,7 +83,12 @@
   top: 60rem;
   right: 5rem;
 }
-
+@media (max-width: 767px) {
+  .rating-container {
+    top: -12rem;
+    right: 0;
+  }
+}
 .stars {
   display: flex;
   justify-content: center;
@@ -92,7 +97,11 @@
   color: #ccc;
   cursor: pointer;
 }
-
+@media (max-width: 767px) {
+  .stars {
+    font-size: 3rem;
+  }
+}
 .stars .star {
   transition: color 0.3s ease;
 }
