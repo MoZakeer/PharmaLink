@@ -2,7 +2,7 @@ let ok = 0;
 let ok2 = 0;
 let token = localStorage.getItem("token");
 const btnLogout = `
-              <button class="Btn">
+              <button class="Btn logout">
                 <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div> 
               <div class="text-header logout">Logout</div>
             </button>`;
@@ -49,64 +49,99 @@ if (token === null) {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-            <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="search.html" class='Search'>Search</a></li>
-                <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
-                <li><a href="Cart.html" class='cart'>🛒Cart</a></li>
-            </ul>
-            <div class="sign">
-                <a href="profile-pharmacy.html" class="user-profile-header">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span>Profile</span>
-                </a>
-                ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+    <div class="container">
+      <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+      <i class="fa-solid fa-bars menu-toggle"></i>
+
+      <nav>
+        <ul class="nav">
+          <li class="mobile-only user-profile-header">
+          <a href="profile-pharmacy.html">Profile</a>
+          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="search.html" class='Search'>Search</a></li>
+          <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
+          <li><a href="Cart.html" class='cart'>Cart</a></li>
+          <li class="mobile-only logout"><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+
+      <ul class="sign">
+        <li>
+          <a href="profile-pharmacy.html" class="user-profile-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li>
+         <a class="logout"> ${btnLogout} </a>
+        </li>
+      </ul>
+    </div>
+  </header>`
     );
   } else if (type === "Company") {
     ok = 1;
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-            <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#" class='home'>Home</a></li>
-                <li><a href="Orders.html" class='orders'>Orders</a></li>
-                <li><a href="products.html" class='products'>Product</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-            <div class="sign">
-                <a href="profile-company.html" class="user-profile-header">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span>Profile</span>
-                </a>
-                ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+  <div class="container">
+    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <nav>
+      <ul class="nav">
+        <li class="mobile-only user-profile-header"><a href="profile-company.html">+Profile</a></li>
+        <li><a href="#" class="home">Home</a></li>
+        <li><a href="Orders.html" class="orders">Orders</a></li>
+        <li><a href="products.html" class="products">Product</a></li>
+        <li><a href="#">About</a></li>
+        <li class="mobile-only logout"><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <ul class="sign">
+      <li>
+        <a href="profile-company.html" class="user-profile-header">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+      <li>
+       <a class="logout"> ${btnLogout} </a>
+      </li>
+    </ul>
+  </div>
+</header>`
     );
   } else {
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
-      `<header>
-        <div class="container">
-        <a href='#'><img src="images/logo.svg" alt="Logo" class="logo" /></a>
-            <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="company.html" class="company">Add Company</a></li>
-                <li><a href="request.html" class="requests">Requests</a></li>
-            </ul>
-            <div class="sign">
-              ${btnLogout}
-            </div>
-        </div>
-    </header>`
+      `<header class="main-header">
+  <div class="container">
+    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="company.html" class="company">Add Company</a></li>
+        <li><a href="request.html" class="requests">Requests</a></li>
+        <li class="mobile-only logout"><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+
+    <ul class="sign">
+      <li>
+        <a class="logout"> ${btnLogout} </a>  
+    </li>
+    </ul>
+  </div>
+</header>`
     );
   }
   if (ok) {
@@ -117,11 +152,15 @@ if (token === null) {
       });
   }
   if (ok2) {
-    document.querySelector(".logout").addEventListener("click", function () {
-      localStorage.removeItem("token");
-      localStorage.removeItem("userName");
-      window.location.href = "https://example.com";
-    });
+    const btnLogoutEl = document.querySelectorAll(".logout");
+    for (const logout of btnLogoutEl) {
+      logout.addEventListener("click", function (e) {
+        console.log(e.target);
+        localStorage.removeItem("token");
+        localStorage.removeItem("userName");
+        window.location.href = "https://example.com";
+      });
+    }
   }
 }
 
@@ -154,3 +193,10 @@ function showNotification(message, ok = 2) {
     notification.classList.add("hidden");
   });
 }
+/////////////////////////////////////////////
+const menuToggle = document.querySelector(".main-header .menu-toggle");
+const nav = document.querySelector(".main-header nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
