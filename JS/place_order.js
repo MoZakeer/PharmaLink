@@ -114,7 +114,7 @@ async function displayInvoiceInfo() {
     companyId,
     medicines,
     minPriceToMakeOrder,
-    pharmacyName, 
+    pharmacyName,
   } = invoice;
   cartInfo = {
     cartId,
@@ -143,16 +143,22 @@ btnPlaceOrder.addEventListener("click", async function (e) {
     totalCartPrice,
     pharmacyName,
   } = cartInfo;
-  if (checkMinPrice(minPriceToMakeOrder, totalCartPrice)) {
-    const url = `${pharmacyPlaceOrderURL}/${cartId}/${companyId}`;
-    await placeOrder(url, token);
-    showNotification("Your order has been placed successfully.", true);
-    setTimeout(() => (window.location.href = "search.html"), 600);
-  } else {
-    showNotification(
-      `Total price must be at least ${minPriceToMakeOrder}$ `,
-      false
-    );
+  try {
+    if (checkMinPrice(minPriceToMakeOrder, totalCartPrice)) {
+      const url = `${pharmacyPlaceOrderURL}/${cartId}/${companyId}`;
+      await placeOrder(url, token);
+      showNotification("Your order has been placed successfully.", true);
+      setTimeout(() => (window.location.href = "search.html"), 600);
+    } else {
+      showNotification(
+        `Total price must be at least ${minPriceToMakeOrder}$ `,
+        false
+      );
+    }
+  } catch (error) {
+    const mess = error.message;
+    const message = mess.slice(mess.indexOf(":") + 2);
+    showNotification(message, false);
   }
 });
 // //////////////

@@ -51,11 +51,11 @@ function login(event) {
       localStorage.setItem("token", data.token);
       // Redirect based on role
       if (data.role === "Company") {
-        window.location.href = "Orders.html";
+        window.location.href = "home.html";
       } else if (data.role === "Pharmacy") {
-        window.location.href = "search.html";
+        window.location.href = "home.html";
       } else if (data.role === "Admin") {
-        window.location.href = "request.html"; // fallback
+        window.location.href = "home.html"; // fallback
         // console.log('hello');
       }
     })

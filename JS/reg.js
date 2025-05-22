@@ -67,6 +67,7 @@ async function register(event) {
         "Your request has been sent and you'll receive a response soon",
         true
       );
+      setTimeout(() => (window.location.href = "home.html"), 1000);
     } else {
       showNotification("the email or username is used", false);
     }

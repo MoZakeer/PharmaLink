@@ -42,9 +42,7 @@ const displayItems = function (cartItems) {
             <tr class="table-row" data-item-id=${cartItemId}>
               <td class="item porduct-image"><img src="${img}" alt="" class='img'></td>
               <td class="item porduct-name">${medicineName}</td>
-              <td class="item product-price">${createPrice(
-                medicinePrice.slice(1)
-              )}</td>
+              <td class="item product-price">${createPrice(medicinePrice)}</td>
               <td class="item product-quantity">
                 <button class="btn decrease"><i class="fa-solid fa-minus"></i></button>
                 <p class="number">${count}</p>

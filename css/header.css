@@ -10,11 +10,14 @@
 }
 
 .main-header :root {
-  --main-color: #008682;
+    --main-color: #008682;
   --hover-color: #045657;
   --light-gray: #d9d9d9;
   --dark-gray: #333;
   --white: #fff;
+  --font-size-small: 1.6rem;
+  --font-size-medium: 2rem;
+  --font-size-large: 2.1rem;
 }
 
 /* ======= Bootstrap-like Container ======= */
@@ -302,7 +305,17 @@
     display: block !important;
   }
 }
-
+.login,
+.register {
+  background-color: var(--main-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  margin-left: -8rem;
+}
+.register{
+  margin: 0;
+}
 /* Hide profile/logout on larger screens */
 .main-header .mobile-only {
   display: none;
@@ -353,16 +366,15 @@
   font-size: 1.5rem;
   color: var(--white);
 }
-@media (max-width:767px) {
-  .notification{
+@media (max-width: 767px) {
+  .notification {
     top: 70px;
     font-size: 16px;
   }
-  .notification p{
+  .notification p {
     font-family: 2rem;
   }
-  .main-header{
+  .main-header {
     height: 70px;
   }
-  
 }

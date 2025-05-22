@@ -74,7 +74,9 @@ main table td {
   font-size: 1.8rem;
   color: #333;
 }
-
+main table td:last-child{
+  text-align: end;
+}
 main tbody tr {
   border-bottom: 1px solid #ccc;
 }

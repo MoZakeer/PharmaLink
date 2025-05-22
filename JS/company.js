@@ -61,7 +61,6 @@ document
           }),
         }
       );
-      console.log(response);
       if (!response.ok) {
         const errorData = await response.json();
         showNotification("the email or password is used");

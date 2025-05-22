@@ -6,25 +6,42 @@ const btnLogout = `
                 <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div> 
               <div class="text-header logout">Logout</div>
             </button>`;
+
 document
   .querySelector("head")
   .insertAdjacentHTML("afterbegin", `<link rel="icon" href="images/Icon.png">`);
 if (token === null) {
   document.querySelector("body").insertAdjacentHTML(
     "afterbegin",
-    `<header>
-        <div class="container">
-            <img src="images/logo.svg" alt="Logo" class="logo"/>
-            <ul class="nav">
-                <li><a href="login.html">Home</a></li>
-                <li><a href="login.html">About</a></li>
-            </ul>
-            <div class="sign">
-                <a href="#" class="logout">Login</a>
-                <a href="#" class="logout">Register</a>
-            </div>
-        </div>
-    </header>`
+    `<header class="main-header">
+    <div class="container">
+      <a a href="home.html" class='home'>
+      <img src="images/logo.svg" alt="Logo" class="logo" />
+      </a>
+
+      <i class="fa-solid fa-bars menu-toggle"></i>
+
+      <nav>
+        <ul class="nav">
+          <li class="mobile-only user-profile-header">
+          <a href="login.html">Login</a>
+          </li>
+          <li class="mobile-only "><a href="reg.html">Resgister</a></li>
+        </ul>
+      </nav>
+
+      <ul class="sign">
+        <li>
+          <a href="login.html" class="login">
+            <span>Login</span>
+          </a>
+        </li>
+        <li>
+         <a href='reg.html' class="register">Register</a>
+        </li>
+      </ul>
+    </div>
+  </header>`
   );
 } else {
   ok2 = 1;
@@ -51,7 +68,7 @@ if (token === null) {
       "afterbegin",
       `<header class="main-header">
     <div class="container">
-      <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+      <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
 
       <i class="fa-solid fa-bars menu-toggle"></i>
 
@@ -60,7 +77,7 @@ if (token === null) {
           <li class="mobile-only user-profile-header">
           <a href="profile-pharmacy.html">Profile</a>
           </li>
-          <li><a href="#">Home</a></li>
+          <li><a href="home.html" class='home'>Home</a></li>
           <li><a href="search.html" class='Search'>Search</a></li>
           <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
           <li><a href="Cart.html" class='cart'>Cart</a></li>
@@ -95,7 +112,7 @@ if (token === null) {
     <nav>
       <ul class="nav">
         <li class="mobile-only user-profile-header"><a href="profile-company.html">Profile</a></li>
-        <li><a href="#" class="home">Home</a></li>
+        <li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
         <li><a href="products.html" class="products">Product</a></li>
         <li><a href="#">About</a></li>
@@ -128,7 +145,7 @@ if (token === null) {
 
     <nav>
       <ul class="nav">
-        <li><a href="#">Home</a></li>
+        <li><a href="home.html" class='home'>Home</a></li>
         <li><a href="company.html" class="company">Add Company</a></li>
         <li><a href="request.html" class="requests">Requests</a></li>
         <li class="mobile-only logout"><a href="#">Logout</a></li>
@@ -158,7 +175,7 @@ if (token === null) {
         console.log(e.target);
         localStorage.removeItem("token");
         localStorage.removeItem("userName");
-        window.location.href = "https://example.com";
+        window.location.href = "home.html";
       });
     }
   }
@@ -199,7 +216,7 @@ const nav = document.querySelector(".main-header nav");
 const body = document.querySelector("body");
 
 menuToggle.addEventListener("click", (e) => {
-  e.stopPropagation(); 
+  e.stopPropagation();
   nav.classList.toggle("active");
 });
 
