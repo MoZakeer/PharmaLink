@@ -287,11 +287,12 @@
     width: 0;
     font-size: 18px;
     padding: 10px;
-    transition: 0.3s;
+    transition: 0.5s;
   }
   .main-header .nav li a:hover {
-    background-color: #eee;
+    /* background-color: #eee; */
     width: 100%;
+    transform: translateX(15px);
   }
   .main-header .sign {
     display: none;

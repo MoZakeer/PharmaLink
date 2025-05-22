@@ -25,7 +25,7 @@
 <body>
 
   <div class="container mt-4">
-    <h1 class="m-4 text-center">Products Management</h1>
+    <h1 class=" text-center">Products Management</h1>
     <div class="row g-3">
       <div class="col-md-5">
         <input type="text" id="title" class="form-control" placeholder="Trade Name" required>
@@ -38,17 +38,17 @@
         <input type="number" id="count" class="form-control" placeholder="Count" required>
       </div>
       <div class="col-md-2"></div>
-      <div class="col-md-5" >
+      <div class="col-md-5">
         <input type="text" id="description" class="form-control" placeholder="Description" required>
       </div>
-      <div class="col-12 form-group text-center">
+      <div class="col-12 form-group text-center mt-4">
         <input type="file" id="imageInput" class="d-none" accept="image/*" required>
         <label for="imageInput" class="col-12 upload-label btn btn-warning fw-bold px-5 py-2">
           <i class="fas fa-upload me-2"></i> Upload Image
         </label>
       </div>
       <div class="col-12 form-group">
-        <button onclick="createItem()" class="create-btn w-100">Create</button>
+        <button onclick="createItem()" class="create-btn w-100 fw-bold">Create</button>
       </div>
 
 
@@ -56,7 +56,7 @@
         <input type="text" id="searchTitle" class="form-control" placeholder="Search by Drug Name">
       </div>
       <div class="col-12 form-group">
-        <button onclick="searchItems()" class="search-btn">Search</button>
+        <button onclick="searchItems()" class="search-btn fw-bold">Search</button>
       </div>
       <!-- <div class="col-12">
 <button onclick="deleteAll()" class="delete-all-btn">Delete All Items</button>

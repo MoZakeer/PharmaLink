@@ -171,7 +171,7 @@ containerItems.addEventListener("click", async function (e) {
   } catch (error) {}
 });
 btnSummary.addEventListener("click", function (e) {
-  if (cartLength) window.location.href = "Company_final_invoice.html";
+  if (cartLength) window.location.href = "place_order.html";
   else showNotification("Cart is empty", false);
 });
 // /////////////////////////////////////////////

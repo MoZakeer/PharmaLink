@@ -17,6 +17,12 @@ html {
   padding-left: 15px;
   padding-right: 15px;
 }
+input{
+font-size: 30px;
+}
+thead{
+  margin-bottom: 30px;
+}
 /* Small Screen */
 @media (min-width: 650px) {
   .container {
@@ -101,6 +107,7 @@ thead {
 .delete-btn {
   background-color: #ff4d4d;
   color: white;
+  font-weight: 600;
   border: none;
   border-radius: 5px;
   padding: 5px 0;
@@ -116,8 +123,10 @@ thead {
   margin-top: 1rem;
 }
 .create-btn:hover,
-.search-btn:hover {
+.search-btn:hover,
+.update-btn:hover {
   background-color: #045657;
+  color: white;
 }
 .search-btn {
   background-color: #00a896;
@@ -128,7 +137,9 @@ thead {
   width: 100%;
   margin-top: 1rem;
 }
-
+#trh{
+  margin-bottom: 2rem;
+}
 th,
 tr,
 td {
@@ -137,6 +148,7 @@ td {
 thead {
   border-bottom: 2px solid black;
   margin-top: 1rem;
+  
 }
 th {
   margin: 1rem 0 !important;
@@ -160,4 +172,19 @@ table {
   margin-top: 3rem;
   border-collapse: collapse;
   border: none;
+}
+h1{
+  margin-top: 30px;
+}
+.upload-label:hover {
+  color: white !important; 
+  background-color: #bc9738;
+}
+
+.btn-info{
+  background-color: var(--main-color);
+    color: white;
+}
+.btn{
+  border-radius: 10px;
 }
