@@ -1,10 +1,10 @@
 "use strict";
 // ELEMENTS
 //
-const labelPharmacyName = document.querySelector(".name");
-const labelPharmacyPhone = document.querySelector(".phone");
-const labelPharmacyEmail = document.querySelector(".email");
-const labelPharmacyAddress = document.querySelector(".address");
+const labelCompanyName = document.querySelector(".name");
+const labelCompanyPhone = document.querySelector(".phone");
+const labelOrderDate = document.querySelector(".email");
+const labelCompanyAddress = document.querySelector(".address");
 const invoiceBody = document.querySelector(".invoice-body");
 const labelTotalPrice = document.querySelector(".total");
 const btnPlaceOrder = document.querySelector(".place-order");
@@ -46,29 +46,7 @@ async function placeOrder(url, token) {
   }
 }
 // Displaying functions
-// display message
-function showNotification(message, ok) {
-  const notification = document.getElementById("notification");
-  const notificationMessage = document.getElementById("notification-message");
-  const closeButton = document.getElementById("notification-close");
-  notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
 
-  // Set the message
-  notificationMessage.textContent = message;
-
-  // Show the notification
-  notification.classList.remove("hidden");
-
-  // Auto-hide the notification after 3 seconds
-  setTimeout(() => {
-    notification.classList.add("hidden");
-  }, 3000);
-
-  // Allow manual dismissal
-  closeButton.addEventListener("click", () => {
-    notification.classList.add("hidden");
-  });
-}
 // Update Price...
 const createPrice = function (totalPrice) {
   const price = new Intl.NumberFormat("DE", {
@@ -76,6 +54,17 @@ const createPrice = function (totalPrice) {
     currency: "EGP",
   }).format(totalPrice);
   return price;
+};
+// Formating date
+const dateFormat = function (orderDate) {
+  const date = new Intl.DateTimeFormat(navigator.language, {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(orderDate));
+  return date;
 };
 // Display all medicines...
 const displayMedicines = function (medicines) {
@@ -94,15 +83,15 @@ const displayMedicines = function (medicines) {
 };
 // Display Pharmacy Information...
 const displayPharmacyInfo = function ({
-  pharmacyName,
-  pharmacyPhone,
-  pharmacyEmail,
-  pharmacyAddress,
+  compayName,
+  companyPhone,
+  orderDate,
+  companyAddress,
 }) {
-  labelPharmacyName.textContent = pharmacyName;
-  labelPharmacyPhone.textContent = pharmacyPhone;
-  labelPharmacyEmail.textContent = pharmacyEmail;
-  labelPharmacyAddress.textContent = pharmacyAddress.replaceAll(",", "/");
+  labelCompanyName.textContent = compayName;
+  labelCompanyPhone.textContent = companyPhone;
+  labelOrderDate.textContent = dateFormat(orderDate);
+  labelCompanyAddress.textContent = companyAddress;
 };
 // Display Total Price
 const displayTotalPrice = function (totalPrice) {
@@ -116,15 +105,16 @@ const checkMinPrice = function (minPrice, totalPrice) {
 async function displayInvoiceInfo() {
   const invoice = await getInvoiceSummary(pharmacyInoiceURL, token);
   const {
-    pharmacyName,
-    pharmacyPhone,
-    pharmacyEmail,
-    pharmacyAddress,
+    compayName,
+    companyPhone,
+    orderDate,
+    companyAddress,
     totalCartPrice,
     cartId,
     companyId,
     medicines,
     minPriceToMakeOrder,
+    pharmacyName, 
   } = invoice;
   cartInfo = {
     cartId,
@@ -136,10 +126,10 @@ async function displayInvoiceInfo() {
   displayMedicines(medicines);
   displayTotalPrice(totalCartPrice);
   displayPharmacyInfo({
-    pharmacyName,
-    pharmacyPhone,
-    pharmacyEmail,
-    pharmacyAddress,
+    compayName,
+    companyPhone,
+    orderDate,
+    companyAddress,
   });
 }
 displayInvoiceInfo();
