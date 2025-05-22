@@ -351,3 +351,16 @@
   font-size: 1.5rem;
   color: var(--white);
 }
+@media (max-width:767px) {
+  .notification{
+    top: 70px;
+    font-size: 16px;
+  }
+  .notification p{
+    font-family: 2rem;
+  }
+  .main-header{
+    height: 70px;
+  }
+  
+}

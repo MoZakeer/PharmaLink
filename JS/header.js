@@ -94,7 +94,7 @@ if (token === null) {
 
     <nav>
       <ul class="nav">
-        <li class="mobile-only user-profile-header"><a href="profile-company.html">+Profile</a></li>
+        <li class="mobile-only user-profile-header"><a href="profile-company.html">Profile</a></li>
         <li><a href="#" class="home">Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
         <li><a href="products.html" class="products">Product</a></li>
@@ -196,7 +196,19 @@ function showNotification(message, ok = 2) {
 /////////////////////////////////////////////
 const menuToggle = document.querySelector(".main-header .menu-toggle");
 const nav = document.querySelector(".main-header nav");
+const body = document.querySelector("body");
 
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); 
   nav.classList.toggle("active");
+});
+
+nav.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+body.addEventListener("click", () => {
+  if (nav?.classList.contains("active")) {
+    nav.classList.remove("active");
+  }
 });
