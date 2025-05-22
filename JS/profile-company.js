@@ -1,7 +1,4 @@
-if (localStorage.getItem("rating")) {
-  showNotification("thank you for your rating!", 1);
-  localStorage.removeItem("rating");
-}
+
 let userName = localStorage.getItem("userName"),
   pharmacy = 0;
 const createPrice = function (totalPrice) {
