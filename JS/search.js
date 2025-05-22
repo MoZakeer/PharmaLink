@@ -82,10 +82,13 @@ const updatelist = function () {
     }
   }
   arr.sort(
-    (a, b) =>
-      (medicine ? a["medicineName"].length - b["medicineName"].length : 0) +
-      (company ? a["companyName"].length - b["companyName"].length : 0)
-  );
+    (a, b) => {
+      let available = 0;
+      if (a['inStock'] && !b['inStock']) available = -1e5;
+      else if (!a['inStock'] && b['inStock']) available = 1e5;
+      return available + (medicine ? a["medicineName"].length - b["medicineName"].length : 0) +
+        (company ? a["companyName"].length - b["companyName"].length : 0);
+    });
   addtr(arr);
   for (let i = 0; i < arr.length; i++) {
     document

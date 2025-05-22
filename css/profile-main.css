@@ -75,7 +75,12 @@ ul {
   justify-content: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
-
+@media (max-width: 767px) {
+  .container-pic {
+    width: 17rem;
+    height: 17rem;
+  }
+}
 .profile-image {
   width: 100%;
   height: 100%;

@@ -34,7 +34,7 @@ body {
 /* Search Container */
 .search-container {
   padding: 0 1.5rem;
-  top: 100px;
+  top: 10rem;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -62,7 +62,7 @@ body {
 
 /* Main Content */
 main .container {
-  margin-top: 150px;
+  margin: 15rem;
   font-size: var(--font-size-small);
 }
 
@@ -92,28 +92,29 @@ main table th:last-child {
 
 main table th,
 main table td {
-  height: 60px;
+  height: 6rem;
   font-size: var(--font-size-medium);
   border-bottom: 2px solid #aaa;
   text-align: center;
   vertical-align: middle;
 }
 main table td {
-  height: 120px;
+  height: 12rem;
 }
 
 main table td:first-child {
   padding-left: 10px;
 }
 td img {
-  width: 10rem;
-  height: 10rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 2rem;
 }
 td a {
   color: #333;
   font-weight: 500;
   text-transform: capitalize;
+  text-decoration: none;
 }
 .btn {
   font-size: var(--font-size-medium);
@@ -141,8 +142,8 @@ td a {
   position: absolute;
   background: #333;
   color: #fff;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
   font-size: var(--font-size-small);
   white-space: wrap;
   z-index: 1000;
@@ -152,9 +153,14 @@ td a {
 .hidden {
   display: none;
 }
+
 @media (max-width: 767px) {
   html {
     font-size: 32%;
+  }
+  main .container {
+    margin: 15rem 0;
+    font-size: var(--font-size-small);
   }
 }
 @media (min-width: 768px) {
@@ -164,11 +170,19 @@ td a {
   .search-container {
     width: 750px;
   }
+  main .container {
+    margin: 15rem 5rem;
+    font-size: var(--font-size-small);
+  }
 }
 
 @media (min-width: 992px) {
   .search-container {
     width: 970px;
+  }
+  main .container {
+    margin: 15rem 10rem;
+    font-size: var(--font-size-small);
   }
 }
 
@@ -178,6 +192,10 @@ td a {
   }
   .search-container {
     width: 1170px;
+  }
+  main .container {
+    margin: 15rem;
+    font-size: var(--font-size-small);
   }
 }
 /*add to cart */
@@ -263,7 +281,7 @@ td a {
   }
   main table {
     width: 100%;
-    margin-top: -10rem;
+    margin-top: 0rem;
     border-spacing: 0;
   }
 }
