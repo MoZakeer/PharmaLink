@@ -42,7 +42,11 @@
   transition: background-color 0.3s, transform 0.2s;
   cursor: pointer;
 }
-
+@media (max-width: 767px) {
+  .comment-submit-btn {
+    width: 100%;
+  }
+}
 .comment-submit-btn:hover {
   background-color: var(--secondary-color);
   transform: scale(1.05);
