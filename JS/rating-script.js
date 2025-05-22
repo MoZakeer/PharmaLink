@@ -12,8 +12,8 @@ async function rating(value, comment) {
                 review: comment
             })
         });
-        if (!currentRating && value) {
-            localStorage.setItem('rating', 1);
+        if (currentRating != value) {
+            localStorage.setItem('message', "thank you for your rating!");
             location.reload();
         }
         getUsers();

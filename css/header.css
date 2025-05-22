@@ -10,7 +10,7 @@
 }
 
 .main-header :root {
-    --main-color: #008682;
+  --main-color: #008682;
   --hover-color: #045657;
   --light-gray: #d9d9d9;
   --dark-gray: #333;
@@ -313,7 +313,7 @@
   color: #fff;
   margin-left: -8rem;
 }
-.register{
+.register {
   margin: 0;
 }
 /* Hide profile/logout on larger screens */
@@ -331,14 +331,13 @@
   padding: 1.5rem 2rem;
   font-size: var(--font-size-medium);
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.962);
+  box-shadow: 0 4px 8px var(--white);
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  max-width: 90%;
-  width: 500px;
+  width: 550px;
   opacity: 1;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -363,7 +362,7 @@
 }
 .notification p {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--white);
 }
 @media (max-width: 767px) {

@@ -63,11 +63,8 @@ async function register(event) {
 
     const data = await response.json();
     if (response.ok) {
-      showNotification(
-        "Your request has been sent and you'll receive a response soon",
-        true
-      );
-      setTimeout(() => (window.location.href = "home.html"), 1000);
+      localStorage.setItem("message", "Your request has been sent and you'll receive a response soon");
+      window.location.href = "home.html"
     } else {
       showNotification("the email or username is used", false);
     }

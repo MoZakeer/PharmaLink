@@ -228,3 +228,8 @@ body.addEventListener("click", () => {
     nav.classList.remove("active");
   }
 });
+let message = localStorage.getItem("message")
+if (message) {
+  showNotification(message, true);
+  localStorage.removeItem("message");
+}
