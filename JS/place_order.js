@@ -147,8 +147,9 @@ btnPlaceOrder.addEventListener("click", async function (e) {
     if (checkMinPrice(minPriceToMakeOrder, totalCartPrice)) {
       const url = `${pharmacyPlaceOrderURL}/${cartId}/${companyId}`;
       await placeOrder(url, token);
-      showNotification("Your order has been placed successfully.", true);
-      setTimeout(() => (window.location.href = "search.html"), 600);
+      // showNotification("Your order has been placed successfully.", true);
+      localStorage.setItem('message', "Your order has been placed successfully.");
+      window.location.href = "search.html";
     } else {
       showNotification(
         `Total price must be at least ${minPriceToMakeOrder}$ `,
