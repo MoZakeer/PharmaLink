@@ -22,7 +22,7 @@ function parseJWT(token) {
   return JSON.parse(jsonPayload);
 }
 let data = parseJWT(token);
-if (userName === null) {
+if (type === "Company") {
   userName = data["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"];
   const ratingContainer = document.querySelector(".rating-container");
   const commentForm = document.querySelector(".comment-form");
