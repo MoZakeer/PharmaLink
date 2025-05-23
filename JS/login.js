@@ -48,8 +48,8 @@ function login(event) {
       return response.json();
     })
     .then((data) => {
-      localStorage.setItem("token", data.token);
-      // Redirect based on role
+      if (rememberMe) localStorage.setItem("token", data.token);
+      else sessionStorage.setItem("token", data.token);
       if (data.role === "Company") {
         window.location.href = "home.html";
       } else if (data.role === "Pharmacy") {
