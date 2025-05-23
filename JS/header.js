@@ -1,4 +1,3 @@
-
 let ok = 0;
 let ok2 = 0;
 let token = localStorage.getItem("token") || sessionStorage.getItem("token");
@@ -63,8 +62,7 @@ if (token === null) {
   }
 
   let data = parseJWT(token);
-  type =
-    data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+  type = data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
   if (type === "Pharmacy") {
     document.querySelector("body").insertAdjacentHTML(
       "afterbegin",
@@ -166,11 +164,11 @@ if (token === null) {
     logout.addEventListener("click", function (e) {
       console.log(e.target);
       localStorage.removeItem("token");
+      sessionStorage.removeItem("token");
       localStorage.removeItem("userName");
       window.location.href = "home.html";
     });
   }
-
 }
 
 document.querySelector("body").insertAdjacentHTML(
