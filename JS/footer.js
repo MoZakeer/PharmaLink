@@ -19,7 +19,7 @@ document.querySelector("body").insertAdjacentHTML(
         <div class="footer-column">
             <h3>Quick Links</h3>
             <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="../home.html">Home</a></li>
             ${footer
     }            
             </ul>
@@ -28,13 +28,13 @@ document.querySelector("body").insertAdjacentHTML(
             <h3>Follow Us</h3>
             <div class="social-icons">
             <a href="#" class="social-link">
-                <img src="../images/facebook.svg" alt="Facebook" class="social-icon" />
+                <img src="images/facebook.svg" alt="Facebook" class="social-icon" />
             </a>
             <a href="#" class="social-link">
-                <img src="../images/twitter (2).svg" alt="Twitter" class="social-icon" />
+                <img src="images/twitter (2).svg" alt="Twitter" class="social-icon" />
             </a>
         <a href="#" class="social-link">
-                <img src="../images/instegram.svg" alt="Instagram" class="social-icon" />
+                <img src="images/instegram.svg" alt="Instagram" class="social-icon" />
             </a>
             </div>
         </div>
