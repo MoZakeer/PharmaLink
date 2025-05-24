@@ -154,7 +154,7 @@ btnPlaceOrder.addEventListener("click", async function (e) {
       window.location.href = "search.html";
     } else {
       showNotification(
-        `Total price must be at least ${minPriceToMakeOrder}$ `,
+        `Total price must be at least ${minPriceToMakeOrder} EGP`,
         false
       );
     }
