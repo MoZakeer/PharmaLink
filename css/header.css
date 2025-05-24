@@ -367,11 +367,11 @@
 }
 @media (max-width: 767px) {
   .notification {
-    top: 70px;
-    font-size: 16px;
+    top: 40px;
+    width: 250px;
   }
   .notification p {
-    font-family: 2rem;
+    font-family: 20px;
   }
   .main-header {
     height: 70px;

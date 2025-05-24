@@ -4,7 +4,7 @@ const refreshPages = function () {
   channel.postMessage("refresh");
 };
 // URL'S
-
+if (type !== "Pharmacy") location.href = '../home.html';
 const allCartItemsURL = "https://pharmalink.runasp.net/api/Cart";
 const deleteCartItemURL =
   "https://pharmalink.runasp.net/api/Cart/DeleteCartItem/";

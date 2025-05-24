@@ -1,3 +1,5 @@
+if (type !== "Pharmacy") location.href = '../home.html';
+
 const createPrice = function (totalPrice) {
   const price = new Intl.NumberFormat("DE", {
     style: "currency",
