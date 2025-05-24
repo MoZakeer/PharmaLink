@@ -1,4 +1,6 @@
 "use strict";
+if (type !== "Pharmacy") location.href = '../home.html';
+
 // ELEMENTS
 //
 const labelCompanyName = document.querySelector(".name");

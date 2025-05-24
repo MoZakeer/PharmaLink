@@ -1,4 +1,5 @@
 "use strict";
+if (type !== "Company") location.href = '../home.html';
 
 // ELEMENTS
 let invoices;
