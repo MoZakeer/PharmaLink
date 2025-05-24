@@ -19,7 +19,7 @@ document.querySelector("body").insertAdjacentHTML(
         <div class="footer-column">
             <h3>Quick Links</h3>
             <ul>
-            <li><a href="../home.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             ${footer
     }            
             </ul>
