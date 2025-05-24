@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- footer css -->
+    <link rel="stylesheet" href="css/footer.css" />
+    <!-- normlize css -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- icons -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Style css -->
+    <link rel="stylesheet" href="css/final_invoice.css" />
+    <!-- header css -->
+    <link rel="stylesheet" href="css/header.css" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Invoice</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- normlize css -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <!-- icons -->
-  <link rel="stylesheet" href="css/all.min.css">
-  <!-- Style css -->
-  <link rel="stylesheet" href="css/final_invoice.css">
-  <!-- header css -->
-  <link rel="stylesheet" href="css/header.css">
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-    rel="stylesheet" />
-  <title>Invoice</title>
-</head>
-
-<body>
-
-  <!-- Start Main Page -->
-  <main class="container">
-    <div class="pharmacy-info">
-      <div class="label-name">
-        <span class="label">pharmacey name: </span>
-        <span class="name">El-Rahma</span>
+  <body>
+    <!-- Start Main Page -->
+    <main class="container">
+      <div class="pharmacy-info">
+        <div class="label-name">
+          <span class="label">pharmacey name: </span>
+          <span class="name">El-Rahma</span>
+        </div>
+        <div class="label-phone">
+          <span class="label">pharmacey phone:</span>
+          <span class="phone">01096639622</span>
+        </div>
+        <div class="label-email">
+          <span class="label">order date:</span>
+          <span class="email">El-Rahma@gmail.com</span>
+        </div>
+        <div class="label-address">
+          <span class="label">address:</span>
+          <span class="address">Qena </span>
+        </div>
       </div>
-      <div class="label-phone">
-        <span class="label">pharmacey phone:</span>
-        <span class="phone">01096639622</span>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Medicine</th>
+              <th>Quantity</th>
+              <th>price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody class="invoice-body">
+            <tr></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="label-email">
-        <span class="label">order date:</span>
-        <span class="email">El-Rahma@gmail.com</span>
+      <div class="total-price">
+        <p class="label">total:</p>
+        <p class="total">400$</p>
       </div>
-      <div class="label-address">
-        <span class="label">address:</span>
-        <span class="address">Qena </span>
-      </div>
-    </div>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Medicine</th>
-            <th>Quantity</th>
-            <th>price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody class="invoice-body">
-          <tr>
-
-        </tbody>
-      </table>
-
-    </div>
-    <div class="total-price">
-      <p class="label">total:</p>
-      <p class="total">400$</p>
-    </div>
-  </main>
-  <!-- End Main Page -->
-  <script src="JS/header.js"></script>
-  <script src="JS/final_invoice.js"></script>
-
-</body>
-
+    </main>
+    <!-- End Main Page -->
+    <script src="JS/header.js"></script>
+    <script src="JS/final_invoice.js"></script>
+    <script src="JS/footer.js"></script>
+  </body>
 </html>

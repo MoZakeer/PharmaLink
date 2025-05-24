@@ -1,3 +1,5 @@
+if (type !== "Admin") location.href = '../home.html';
+
 const validatePassword = function (password) {
   if (password.length < 8) {
     console.log(1);

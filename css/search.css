@@ -23,6 +23,7 @@ a {
   --font-size-large: 2.1rem;
 }
 body {
+  min-height: 100rem;
   text-transform: capitalize;
 }
 /* Utility Classes */
