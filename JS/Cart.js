@@ -40,14 +40,14 @@ const displayItems = function (cartItems) {
     const img = "http://pharmalink.runasp.net/" + medicineImage.slice(index);
     const html = `
             <tr class="table-row" data-item-id=${cartItemId}>
-              <td class="item porduct-image"><img src="${img}" alt="" class='img'></td>
-              <td class="item porduct-name">${medicineName}</td>
+              <td class="item product-image"><img src="${img}" alt="" class='img'></td>
+              <td class="item product-name">${medicineName}</td>
               <td class="item product-price">${createPrice(medicinePrice)}</td>
               <td class="item product-quantity">
                 <button class="btn decrease"><i class="fa-solid fa-minus"></i></button>
                 <p class="number">${count}</p>
                 <button class=" btn increase"><i class="fa-solid fa-plus"></i></button></td>
-              <td>
+              <td class= "delete-product">
               ${btnDelete}
               </td>
             </tr>`;
@@ -166,7 +166,7 @@ containerItems.addEventListener("click", async function (e) {
     }
 
     displayAllItems();
-  } catch (error) {}
+  } catch (error) { }
 });
 btnSummary.addEventListener("click", function (e) {
   if (cartLength) window.location.href = "place_order.html";
