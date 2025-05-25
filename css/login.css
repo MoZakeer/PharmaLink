@@ -105,7 +105,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-/* نص "Forgot Password" */
 .text-end a {
   font-size: 0.8rem;
   color: #666;
@@ -118,7 +117,7 @@ h2 {
 
   .image-side {
     width: 100%;
-    height: 800px;
+    height: 100vh;
   }
 
   .form-side {
