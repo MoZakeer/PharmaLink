@@ -32,8 +32,9 @@ document.querySelector("body").insertAdjacentHTML(
             <a href="http://x.com/Mo_Zakeer" class="social-link" target='_blank'>
                 <img src="images/twitter (2).svg" alt="Twitter" class="social-icon" />
             </a>
-        <a href="#" class="social-link">
-                <img src="images/instegram.svg" alt="Instagram" class="social-icon" />
+        <a href="https://www.linkedin.com/in/mohamed-abdelnaser-899262289/" target='_blank' class="social-link" >
+                <img src="images/LinkedIn_icon.svg" alt="LinkedIn" class="social-icon" />
+
             </a>
             </div>
         </div>
@@ -41,9 +42,9 @@ document.querySelector("body").insertAdjacentHTML(
             <h3>Contact Us</h3>
             <p>
             Email:
-            <a href="mailto:contact@pharmalink.com">contact@pharmalink.com</a>
+            <a href="mailto:pharmalink38@gmail.com">pharmalink38@gmail.com</a>
             </p>
-            <p>Phone: <a href="tel:+1234567890">+01096809082</a></p>
+            <p>Phone: <a href="tel:+1234567890">+201096809082</a></p>
         </div>
         <div class="copyright">© 2025 <span> PharmaLink</span> All rights reserved.</div>
     </footer>`
