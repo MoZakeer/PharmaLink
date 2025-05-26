@@ -75,7 +75,13 @@ if (token === null) {
   if (type === "Company")
     nav = `<li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
-        <li><a href="products.html" class="products">Product</a></li>`
+        <li><a href="products.html" class="products">Product</a></li>`,
+      profile = `<li>
+            <a href="profile-company.html" class="user-profile-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>Profile</span>
+            </a>
+            </li>`;
   else if (type === "Admin")
     nav = `<li><a href="home.html" class='home'>Home</a></li>
         <li><a href="company.html" class="company">Add Company</a></li>
