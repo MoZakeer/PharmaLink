@@ -50,7 +50,13 @@ a {
   width: 80%;
   cursor: pointer;
 }
+@media (max-width:767px) {
+  .custom-btn{
+    width: 100%;
+    margin: 30px auto !important ;
 
+  }
+}
 .custom-btn:hover {
   background-color: #008c7a;
 }
@@ -72,6 +78,14 @@ input {
 
   .form-section {
     padding: 3rem;
+  }
+}
+@media (max-width:767px) {
+  .image-section{
+    display: none;
+  }
+  .submit{
+    width: 100%;
   }
 }
 label{

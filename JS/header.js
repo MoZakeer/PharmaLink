@@ -144,7 +144,7 @@ if (token === null) {
     <nav>
       <ul class="nav">
         <li><a href="home.html" class='home'>Home</a></li>
-        <li><a href="company.html" class="company">Add Company</a></li>
+        <li><a href="company.html" class="company">Company</a></li>
         <li><a href="request.html" class="requests">Requests</a></li>
         <li class="mobile-only logout"><a href="#">Logout</a></li>
       </ul>

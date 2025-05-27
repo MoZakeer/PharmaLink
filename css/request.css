@@ -1,3 +1,4 @@
+/* ========== Base Reset ========== */
 * {
   margin: 0;
   padding: 0;
@@ -10,33 +11,8 @@ html {
 :root {
   --main-color: #008682;
 }
-/* Start Global  */
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-/* Small Screen */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
 
-/* median Screen */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-/* Large Screen */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+/* ========== Global Styles ========== */
 a {
   text-decoration: none;
 }
@@ -44,27 +20,66 @@ ul {
   list-style: none;
 }
 
-/* Start page Content */
+/* Container */
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* ========== Main Content ========== */
 main .container {
   font-size: 1.6rem;
   color: #333;
 }
+
+/* Table */
 main table {
   width: 100%;
   margin-top: 2rem;
   border-spacing: 0;
 }
+
+/* Table Row Structure */
 main table tr {
   display: grid;
   grid-template-columns: repeat(4, 1fr) 2fr;
   font-size: 2.1rem;
+  align-items: center;
 }
+@media (max-width: 767px) {
+  main table tr {
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    font-size: 1.8rem;
+  }
+}
+
+/* Table Head */
 main thead tr {
   margin-top: 3rem;
   padding: 2rem;
   background-color: var(--main-color);
   color: #fff;
   border-radius: 5rem;
+}
+@media (max-width: 767px) {
+  main thead tr {
+    padding: 1.4rem;
+  }
 }
 main table th {
   text-align: start;
@@ -73,21 +88,53 @@ main table th {
   letter-spacing: 1px;
 }
 
+/* Table Body */
 main tbody tr {
   padding: 3rem 2rem;
   border-bottom: 2px solid #aaa;
   font-size: 2rem;
   text-transform: capitalize;
 }
+@media (max-width: 767px) {
+  main tbody tr {
+    padding: 2rem 1.4rem;
+  }
+}
 
+/* Action Icons */
 main table td a i {
   font-size: 40px;
   color: #dc3545;
 }
-
-main table td:last-child {
-  text-align: end;
+@media (max-width: 767px) {
+  main table td a i {
+    font-size: 3rem;
+    margin-left: 10px;
+  }
 }
+@media (min-width: 767px) and (max-width: 991px) {
+  main table td a i {
+    font-size: 3rem;
+    margin-left: 20px;
+  }
+}
+/* Last Cell */
+main table td:last-child {
+  display: flex;
+  justify-content: end;
+}
+@media (max-width: 767px) {
+  tbody tr td:last-child {
+    justify-content: end;
+  }
+}
+@media (max-width: 767px) {
+  td:nth-child(3),
+  th:nth-child(3) {
+    display: none;
+  }
+}
+/* ========== Buttons ========== */
 .btn {
   font-size: 1.9rem;
   padding: 1rem 3rem;
@@ -105,16 +152,47 @@ main table td:last-child {
 }
 .accept {
   background-color: var(--main-color);
-  
 }
 .accept:hover {
   background-color: #045657;
 }
-
 .reject {
   background-color: #dc3545;
 }
 .reject:hover {
   background-color: rgb(153, 29, 41);
 }
-/* End page Content */
+
+/* Mobile Button Styles */
+@media (max-width: 767px) {
+  .btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 2rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: transparent;
+  }
+
+  .accept::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+    /* transform: rotateY(180deg); */
+    position: absolute;
+  }
+
+  .reject::before {
+    content: "\f00d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white;
+    /* transform: rotateY(180deg); */
+    position: absolute;
+  }
+}
