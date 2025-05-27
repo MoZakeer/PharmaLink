@@ -1,4 +1,3 @@
-
 let token = localStorage.getItem("token") || sessionStorage.getItem("token");
 let type = "";
 
@@ -73,23 +72,24 @@ if (token === null) {
         </li>`;
 
   if (type === "Company")
-    nav = `<li><a href="home.html" class='home'>Home</a></li>
+    (nav = `<li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
-        <li><a href="products.html" class="products">Product</a></li>`,
-      profile = `<li>
+        <li><a href="products.html" class="products">Product</a></li>`),
+      (profile = `<li>
             <a href="profile-company.html" class="user-profile-header">
             <i class="fa-regular fa-circle-user"></i>
             <span>Profile</span>
             </a>
-            </li>`;
-  else if (type === "Admin")
-    nav = `<li><a href="home.html" class='home'>Home</a></li>
+            </li>`);
+  else if (type === "Admin") {
+    (nav = `<li><a href="home.html" class='home'>Home</a></li>
         <li><a href="company.html" class="company">Add Company</a></li>
-        <li><a href="request.html" class="requests">Requests</a></li>`, profile = ``;
+        <li><a href="request.html" class="requests">Requests</a></li>`),
+      (profile = ``);
 
-  document.querySelector("body").insertAdjacentHTML(
-    "afterbegin",
-    `<header class="main-header">
+    document.querySelector("body").insertAdjacentHTML(
+      "afterbegin",
+      `<header class="main-header">
     <div class="container">
       <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
 
@@ -171,77 +171,81 @@ if (token === null) {
   </div>
 </header>`
     );
-  const btnLogoutEl = document.querySelectorAll(".logout");
-  for (const logout of btnLogoutEl) {
-    logout.addEventListener("click", function (e) {
-      console.log(e.target);
-      localStorage.removeItem("token");
-      sessionStorage.removeItem("token");
-      localStorage.removeItem("userName");
-      window.location.href = "home.html";
-    });
-}
-const btnLogoutEl = document.querySelectorAll(".logout");
-for (const logout of btnLogoutEl) {
-  logout.addEventListener("click", function (e) {
-    console.log(e.target);
-    localStorage.removeItem("token");
-    sessionStorage.removeItem("token");
-    localStorage.removeItem("userName");
-    window.location.href = "home.html";
-  });
-}
+    const btnLogoutEle = document.querySelectorAll(".logout");
+    for (const logout of btnLogoutEle) {
+      logout.addEventListener("click", function (e) {
+        console.log(e.target);
+        localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
+        localStorage.removeItem("userName");
+        window.location.href = "home.html";
+      });
+    }
+    const btnLogoutEl = document.querySelectorAll(".logout");
+    for (const logout of btnLogoutEl) {
+      logout.addEventListener("click", function (e) {
+        console.log(e.target);
+        localStorage.removeItem("token");
+        sessionStorage.removeItem("token");
+        localStorage.removeItem("userName");
+        window.location.href = "home.html";
+      });
+    }
 
-document.querySelector("body").insertAdjacentHTML(
-  "beforeend",
-  `<div id="notification" class="notification hidden">
+    document.querySelector("body").insertAdjacentHTML(
+      "beforeend",
+      `<div id="notification" class="notification hidden">
         <p id="notification-message">Your item has been added to the cart!</p>
         <button id="notification-close" class="notification-close">✖</button>
     </div>
     <div id="descriptionBox" class="hidden"></div>`
-);
-function showNotification(message, ok = 2) {
-  const notification = document.getElementById("notification");
-  const notificationMessage = document.getElementById("notification-message");
-  const closeButton = document.getElementById("notification-close");
-  if (ok == 2)
-    (message = "⚠️" + message),
-      (notification.style.backgroundColor = " #C5C75D");
-  else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
+    );
+    function showNotification(message, ok = 2) {
+      const notification = document.getElementById("notification");
+      const notificationMessage = document.getElementById(
+        "notification-message"
+      );
+      const closeButton = document.getElementById("notification-close");
+      if (ok == 2)
+        (message = "⚠️" + message),
+          (notification.style.backgroundColor = " #C5C75D");
+      else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
 
-  notificationMessage.textContent = message;
+      notificationMessage.textContent = message;
 
-  notification.classList.remove("hidden");
+      notification.classList.remove("hidden");
 
-  setTimeout(() => {
-    notification.classList.add("hidden");
-  }, 3000);
+      setTimeout(() => {
+        notification.classList.add("hidden");
+      }, 3000);
 
-  closeButton.addEventListener("click", () => {
-    notification.classList.add("hidden");
-  });
-}
-/////////////////////////////////////////////
-const menuToggle = document.querySelector(".main-header .menu-toggle");
-const nav = document.querySelector(".main-header nav");
-const body = document.querySelector("body");
+      closeButton.addEventListener("click", () => {
+        notification.classList.add("hidden");
+      });
+    }
+    /////////////////////////////////////////////
+    const menuToggle = document.querySelector(".main-header .menu-toggle");
+    const nav = document.querySelector(".main-header nav");
+    const body = document.querySelector("body");
 
-menuToggle.addEventListener("click", (e) => {
-  e.stopPropagation();
-  nav.classList.toggle("active");
-});
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nav.classList.toggle("active");
+    });
 
-nav.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
+    nav.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
 
-body.addEventListener("click", () => {
-  if (nav?.classList.contains("active")) {
-    nav.classList.remove("active");
+    body.addEventListener("click", () => {
+      if (nav?.classList.contains("active")) {
+        nav.classList.remove("active");
+      }
+    });
+    let message = localStorage.getItem("message");
+    if (message) {
+      showNotification(message, true);
+      localStorage.removeItem("message");
+    }
   }
-});
-let message = localStorage.getItem("message");
-if (message) {
-  showNotification(message, true);
-  localStorage.removeItem("message");
 }
