@@ -1,7 +1,5 @@
-let ok = 0;
-let ok2 = 0;
-let token = localStorage.getItem("token") || sessionStorage.getItem("token");
 
+let token = localStorage.getItem("token") || sessionStorage.getItem("token");
 let type = "";
 
 const btnLogout = `
@@ -40,7 +38,7 @@ if (token === null) {
           </a>
         </li>
         <li>
-         <a href='reg.html' class="register">Register</a>
+        <a href='reg.html' class="register">Register</a>
         </li>
       </ul>
     </div>
@@ -63,37 +61,52 @@ if (token === null) {
 
   let data = parseJWT(token);
   type = data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-  if (type === "Pharmacy") {
-    document.querySelector("body").insertAdjacentHTML(
-      "afterbegin",
-      `<header class="main-header">
+  let nav = `<li><a href="home.html" class='home'>Home</a></li>
+          <li><a href="search.html" class='Search'>Search</a></li>
+          <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
+          <li><a href="Cart.html" class='cart'>Cart</a></li>`,
+    profile = `<li>
+          <a href="profile-pharmacy.html" class="user-profile-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>Profile</span>
+          </a>
+        </li>`;
+
+  if (type === "Company")
+    nav = `<li><a href="home.html" class='home'>Home</a></li>
+        <li><a href="Orders.html" class="orders">Orders</a></li>
+        <li><a href="products.html" class="products">Product</a></li>`,
+      profile = `<li>
+            <a href="profile-company.html" class="user-profile-header">
+            <i class="fa-regular fa-circle-user"></i>
+            <span>Profile</span>
+            </a>
+            </li>`;
+  else if (type === "Admin")
+    nav = `<li><a href="home.html" class='home'>Home</a></li>
+        <li><a href="company.html" class="company">Add Company</a></li>
+        <li><a href="request.html" class="requests">Requests</a></li>`, profile = ``;
+
+  document.querySelector("body").insertAdjacentHTML(
+    "afterbegin",
+    `<header class="main-header">
     <div class="container">
       <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
 
       <i class="fa-solid fa-bars menu-toggle"></i>
 
       <nav>
-        <ul class="nav">
-          <li class="mobile-only user-profile-header">
-          <a href="profile-pharmacy.html">Profile</a>
+        <ul class="nav">  
           </li>
-          <li><a href="home.html" class='home'>Home</a></li>
-          <li><a href="search.html" class='Search'>Search</a></li>
-          <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
-          <li><a href="Cart.html" class='cart'>Cart</a></li>
+          ${nav}
           <li class="mobile-only logout"><a href="#">Logout</a></li>
         </ul>
       </nav>
 
       <ul class="sign">
+        ${profile}
         <li>
-          <a href="profile-pharmacy.html" class="user-profile-header">
-            <i class="fa-regular fa-circle-user"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <li>
-         <a class="logout"> ${btnLogout} </a>
+        <a class="logout"> ${btnLogout} </a>
         </li>
       </ul>
     </div>
@@ -158,7 +171,6 @@ if (token === null) {
   </div>
 </header>`
     );
-  }
   const btnLogoutEl = document.querySelectorAll(".logout");
   for (const logout of btnLogoutEl) {
     logout.addEventListener("click", function (e) {
@@ -168,7 +180,16 @@ if (token === null) {
       localStorage.removeItem("userName");
       window.location.href = "home.html";
     });
-  }
+}
+const btnLogoutEl = document.querySelectorAll(".logout");
+for (const logout of btnLogoutEl) {
+  logout.addEventListener("click", function (e) {
+    console.log(e.target);
+    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
+    localStorage.removeItem("userName");
+    window.location.href = "home.html";
+  });
 }
 
 document.querySelector("body").insertAdjacentHTML(
