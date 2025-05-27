@@ -17,9 +17,7 @@ html {
   padding-left: 15px;
   padding-right: 15px;
 }
-input{
-font-size: 30px;
-}
+ 
 thead{
   margin-bottom: 30px;
 }
@@ -28,6 +26,22 @@ thead{
   .container {
     width: 680px;
   }
+  table{
+    font-size: 12px;
+  }
+
+  table td,
+  table th {
+    padding: 4px !important;
+    white-space: normal !important;
+
+  }
+
+  .btn {
+    padding: 2px 4px;
+    font-size: 12px;
+  }
+  
 }
 
 /* median Screen */
@@ -69,7 +83,7 @@ header .sign #reg:hover {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+   padding: 1.5rem 1.5rem;
   width: 100%;
   margin-top: 1rem;
 }
@@ -86,16 +100,14 @@ header .sign #reg:hover {
   border-radius: 5px;
   padding: 5px 0;
 }
-input {
-  font-size: 14px !important;
-}
+ 
 .table {
   font-size: 16px;
 }
 thead {
   border-bottom: 2px solid #aaa !important;
   margin-top: 1rem !important;
-  font-size: 18px !important;
+  font-weight: 700;
   margin-bottom: 1rem !important;
 }
 
@@ -104,27 +116,21 @@ thead {
   word-break: break-all;
   max-width: 200px;
 }
-.delete-btn {
-  background-color: #ff4d4d;
-  color: white;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 0;
-}
+ 
 
 .create-btn {
   background-color: #00a896;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 1.2rem 1.5rem;
   width: 100%;
   margin-top: 1rem;
 }
 .create-btn:hover,
 .search-btn:hover,
-.update-btn:hover {
+.update-btn:hover ,
+.btn-info:hover{
   background-color: #045657;
   color: white;
 }
@@ -133,7 +139,7 @@ thead {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 1.2rem 1.5rem;
   width: 100%;
   margin-top: 1rem;
 }
@@ -159,8 +165,9 @@ input[type="number"],
 input[type="url"] {
   background-color: #e0e0e0;
   border: none;
-  padding: 1rem;
+   padding: .7rem 1.2rem;
   margin-top: 0.5rem;
+  font-size: 20px;
 }
 button {
   width: 100%;
@@ -184,6 +191,12 @@ h1{
 .btn-info{
   background-color: var(--main-color);
     color: white;
+}
+.btn-info,
+.btn-danger{
+  padding: .5rem;
+  font-size: 14px;
+
 }
 .btn{
   border-radius: 10px;

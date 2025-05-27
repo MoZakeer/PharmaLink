@@ -140,7 +140,7 @@
 
 .main-header .sign span {
   font-size: 25px;
-  color: var(--dark-gray);
+  /* color: var(--dark-gray); */
 }
 
 /* ======= Logout Button ======= */

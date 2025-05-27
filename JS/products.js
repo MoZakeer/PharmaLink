@@ -1,8 +1,11 @@
-if (type !== "Company") location.href = '../home.html';
+if (type !== "Company") location.href = "../home.html";
 
 const API_URL = "https://pharmalink.runasp.net/api/Medicine";
 document.querySelector(".products").classList.add("active");
-
+const productsElement = document.querySelector(".products");
+if (productsElement) {
+  productsElement.classList.add("active");
+}
 const titleInput = document.getElementById("title");
 const priceInput = document.getElementById("price");
 const stockInput = document.getElementById("count");
@@ -59,7 +62,8 @@ async function getCompanyMedicines() {
       }
     );
 
-    if (!response.ok) throw new Error(`https error! status: ${response.status}`);
+    if (!response.ok)
+      throw new Error(`https error! status: ${response.status}`);
 
     const medicines = await response.json();
 
@@ -153,7 +157,8 @@ let selectedMedicineId = null;
 async function prepareUpdate(id) {
   try {
     const response = await fetch(`${API_URL}/${id}`);
-    if (!response.ok) throw new Error(`https error! status: ${response.status}`);
+    if (!response.ok)
+      throw new Error(`https error! status: ${response.status}`);
     const medicine = await response.json();
 
     selectedMedicineId = medicine.id;
@@ -194,7 +199,8 @@ async function updateItem() {
       body: JSON.stringify(updatedMedicine),
     });
 
-    if (!response.ok) throw new Error(`https error! status: ${response.status}`);
+    if (!response.ok)
+      throw new Error(`https error! status: ${response.status}`);
     // alert("Medicine updated successfully!");
     clearForm();
     getCompanyMedicines();
@@ -270,7 +276,8 @@ async function deleteItem(id) {
       method: "DELETE",
       headers: { Authorization: "Bearer " + token },
     });
-    if (!response.ok) throw new Error(`https error! status: ${response.status}`);
+    if (!response.ok)
+      throw new Error(`https error! status: ${response.status}`);
     getCompanyMedicines();
     // alert("Medicine deleted successfully!");
   } catch (error) {
@@ -281,15 +288,27 @@ async function deleteItem(id) {
 
 async function searchItems() {
   const searchTitle = searchTitleInput.value.trim().toLowerCase();
-  if (!searchTitle) {
-    getCompanyMedicines();
-    return;
-  }
 
   try {
-    const response = await fetch(API_URL);
-    if (!response.ok) throw new Error(`https error! status: ${response.status}`);
+    const response = await fetch(
+      "https://pharmalink.runasp.net/api/Medicine/CompanyMedicnines",
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+
+    if (!response.ok)
+      throw new Error(`https error! status: ${response.status}`);
+
     const medicines = await response.json();
+    if (!searchTitle) {
+      displayMedicines(medicines);
+      return;
+    }
+
     const filteredMedicines = medicines.filter((medicine) =>
       medicine.medicineName.toLowerCase().includes(searchTitle)
     );
@@ -300,7 +319,7 @@ async function searchItems() {
     alert("Failed to search medicines!");
   }
 }
-// تنظيف النموذج
+
 function clearForm() {
   titleInput.value = "";
   priceInput.value = "";
@@ -314,3 +333,4 @@ function clearForm() {
 }
 
 window.onload = getCompanyMedicines;
+searchTitleInput.addEventListener("input", searchItems);
