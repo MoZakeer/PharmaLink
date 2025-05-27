@@ -60,7 +60,7 @@ if (token === null) {
 
   let data = parseJWT(token);
   type = data["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-  let nav = `<li><a href="home.html" class='home'>Home</a></li>
+  let nav_ = `<li><a href="home.html" class='home'>Home</a></li>
           <li><a href="search.html" class='Search'>Search</a></li>
           <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
           <li><a href="Cart.html" class='cart'>Cart</a></li>`,
@@ -72,7 +72,7 @@ if (token === null) {
         </li>`;
 
   if (type === "Company")
-    (nav = `<li><a href="home.html" class='home'>Home</a></li>
+    (nav_ = `<li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
         <li><a href="products.html" class="products">Product</a></li>`),
       (profile = `<li>
@@ -82,8 +82,8 @@ if (token === null) {
             </a>
             </li>`);
   else if (type === "Admin") {
-    (nav = `<li><a href="home.html" class='home'>Home</a></li>
-        <li><a href="company.html" class="company">Add Company</a></li>
+    (nav_ = `<li><a href="home.html" class='home'>Home</a></li>
+        <li><a href="company.html" class="company"> Company</a></li>
         <li><a href="request.html" class="requests">Requests</a></li>`),
       (profile = ``);
 
@@ -98,7 +98,7 @@ if (token === null) {
       <nav>
         <ul class="nav">  
           </li>
-          ${nav}
+          ${nav_}
           <li class="mobile-only logout"><a href="#">Logout</a></li>
         </ul>
       </nav>
@@ -171,81 +171,79 @@ if (token === null) {
   </div>
 </header>`
     );
-    const btnLogoutEle = document.querySelectorAll(".logout");
-    for (const logout of btnLogoutEle) {
-      logout.addEventListener("click", function (e) {
-        console.log(e.target);
-        localStorage.removeItem("token");
-        sessionStorage.removeItem("token");
-        localStorage.removeItem("userName");
-        window.location.href = "home.html";
-      });
-    }
-    const btnLogoutEl = document.querySelectorAll(".logout");
-    for (const logout of btnLogoutEl) {
-      logout.addEventListener("click", function (e) {
-        console.log(e.target);
-        localStorage.removeItem("token");
-        sessionStorage.removeItem("token");
-        localStorage.removeItem("userName");
-        window.location.href = "home.html";
-      });
-    }
+  }
+  const btnLogoutEle = document.querySelectorAll(".logout");
+  for (const logout of btnLogoutEle) {
+    logout.addEventListener("click", function (e) {
+      console.log(e.target);
+      localStorage.removeItem("token");
+      sessionStorage.removeItem("token");
+      localStorage.removeItem("userName");
+      window.location.href = "home.html";
+    });
+  }
+  const btnLogoutEl = document.querySelectorAll(".logout");
+  for (const logout of btnLogoutEl) {
+    logout.addEventListener("click", function (e) {
+      console.log(e.target);
+      localStorage.removeItem("token");
+      sessionStorage.removeItem("token");
+      localStorage.removeItem("userName");
+      window.location.href = "home.html";
+    });
+  }
 
-    document.querySelector("body").insertAdjacentHTML(
-      "beforeend",
-      `<div id="notification" class="notification hidden">
+  document.querySelector("body").insertAdjacentHTML(
+    "beforeend",
+    `<div id="notification" class="notification hidden">
         <p id="notification-message">Your item has been added to the cart!</p>
         <button id="notification-close" class="notification-close">✖</button>
     </div>
     <div id="descriptionBox" class="hidden"></div>`
-    );
-    function showNotification(message, ok = 2) {
-      const notification = document.getElementById("notification");
-      const notificationMessage = document.getElementById(
-        "notification-message"
-      );
-      const closeButton = document.getElementById("notification-close");
-      if (ok == 2)
-        (message = "⚠️" + message),
-          (notification.style.backgroundColor = " #C5C75D");
-      else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
+  );
+  function showNotification(message, ok = 2) {
+    const notification = document.getElementById("notification");
+    const notificationMessage = document.getElementById("notification-message");
+    const closeButton = document.getElementById("notification-close");
+    if (ok == 2)
+      (message = "⚠️" + message),
+        (notification.style.backgroundColor = " #C5C75D");
+    else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
 
-      notificationMessage.textContent = message;
+    notificationMessage.textContent = message;
 
-      notification.classList.remove("hidden");
+    notification.classList.remove("hidden");
 
-      setTimeout(() => {
-        notification.classList.add("hidden");
-      }, 3000);
+    setTimeout(() => {
+      notification.classList.add("hidden");
+    }, 3000);
 
-      closeButton.addEventListener("click", () => {
-        notification.classList.add("hidden");
-      });
-    }
-    /////////////////////////////////////////////
-    const menuToggle = document.querySelector(".main-header .menu-toggle");
-    const nav = document.querySelector(".main-header nav");
-    const body = document.querySelector("body");
-
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      nav.classList.toggle("active");
+    closeButton.addEventListener("click", () => {
+      notification.classList.add("hidden");
     });
-
-    nav.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
-
-    body.addEventListener("click", () => {
-      if (nav?.classList.contains("active")) {
-        nav.classList.remove("active");
-      }
-    });
-    let message = localStorage.getItem("message");
-    if (message) {
-      showNotification(message, true);
-      localStorage.removeItem("message");
-    }
   }
+}
+/////////////////////////////////////////////
+const menuToggle = document.querySelector(".main-header .menu-toggle");
+const nav = document.querySelector(".main-header nav");
+const body = document.querySelector("body");
+
+menuToggle.addEventListener("click", (e) => {
+  e.stopPropagation();
+  nav.classList.toggle("active");
+});
+
+nav.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+body.addEventListener("click", () => {
+  if (nav?.classList.contains("active")) {
+    nav.classList.remove("active");
+  }
+});
+let message = localStorage.getItem("message");
+if (message) {
+  showNotification(message, true);
+  localStorage.removeItem("message");
 }

@@ -312,15 +312,15 @@
     display: block !important;
   }
 }
-.login,
-.register {
+.main-header .login,
+.main-header .register {
   background-color: var(--main-color);
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   color: #fff;
   margin-left: -8rem;
 }
-.register {
+.main-header .register {
   margin: 0;
 }
 /* Hide profile/logout on larger screens */
