@@ -96,9 +96,7 @@ if (token === null) {
       <i class="fa-solid fa-bars menu-toggle"></i>
 
       <nav>
-        <ul class="nav">
-          <li class="mobile-only user-profile-header">
-          <a href="profile-pharmacy.html">Profile</a>
+        <ul class="nav">  
           </li>
           ${nav}
           <li class="mobile-only logout"><a href="#">Logout</a></li>
