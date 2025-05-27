@@ -1,5 +1,6 @@
-let token = localStorage.getItem("token") || sessionStorage.getItem("token");
 
+let token = localStorage.getItem("token") || sessionStorage.getItem("token");
+console.log(token);
 let type = "";
 
 const btnLogout = `

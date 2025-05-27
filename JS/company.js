@@ -21,8 +21,6 @@ document
   .getElementById("signupForm")
   .addEventListener("submit", async function register(event) {
     event.preventDefault();
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwianRpIjoiODE1MDRhODYtMzcyZi00ZGVhLTg4MjMtNmRkNGM3Zjg4MTAyIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc0ODA4NjM1NywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDQiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDMwNCJ9.NNl6CPs3Gfx3WXADR-lEqDw-UYTlW6EaRrEmr81UrqA";
     // Collect form values
     const form = event.target;
     const CompanyName = form.CompanyName.value.trim();
