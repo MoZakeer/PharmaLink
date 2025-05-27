@@ -68,33 +68,10 @@ document
       }
 
       const data = await response.json();
-      console.log("Success:", data);
       showNotification("Registration add!", true);
       form.reset(); // Reset form on success
     } catch (error) {
-      console.error("Error:", error.message);
       showNotification("An error occurred. Please try again later.", false);
     }
   });
 
-function showNotification(message, ok = 2) {
-  const notification = document.getElementById("notification");
-  const notificationMessage = document.getElementById("notification-message");
-  const closeButton = document.getElementById("notification-close");
-  if (ok == 2)
-    (message = "⚠️" + message),
-      (notification.style.backgroundColor = " #C5C75D");
-  else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
-
-  notificationMessage.textContent = message;
-
-  notification.classList.remove("hidden");
-
-  setTimeout(() => {
-    notification.classList.add("hidden");
-  }, 5000);
-
-  closeButton.addEventListener("click", () => {
-    notification.classList.add("hidden");
-  });
-}
