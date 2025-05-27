@@ -9,7 +9,7 @@
   font-size: 62.5%;
 }
 
-.main-header :root {
+:root {
   --main-color: #008682;
   --hover-color: #045657;
   --light-gray: #d9d9d9;
@@ -303,6 +303,7 @@
     width: 100%;
     transform: translateX(15px);
   }
+
   .main-header .sign {
     display: none;
   }
