@@ -18,7 +18,7 @@ if (token === null) {
     "afterbegin",
     `<header class="main-header">
     <div class="container">
-      <a a href="home.html" class='home'>
+      <a href="home.html" class='home'>
       <img src="images/logo.svg" alt="Logo" class="logo" />
       </a>
 
@@ -140,7 +140,9 @@ if (token === null) {
       "afterbegin",
       `<header class="main-header">
   <div class="container">
-    <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+    <a href="home.html">
+    <img src="images/logo.svg" alt="Logo" class="logo" />
+    </a>
 
     <i class="fa-solid fa-bars menu-toggle"></i>
 
