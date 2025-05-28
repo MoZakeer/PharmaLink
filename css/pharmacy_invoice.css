@@ -75,7 +75,7 @@ main table td {
   color: #333;
 }
 main table td:last-child {
-  text-align: end;
+  text-align: start;
 }
 main tbody tr {
   border-bottom: 1px solid #ccc;
@@ -176,5 +176,26 @@ main table th:last-child {
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+}
+@media (max-width: 767px) {
+  td .btn {
+    color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+  }
+  td .btn::before {
+    content: "\f543";
+    font-weight: 900;
+    font-family: "font awesome 5 free";
+    position: absolute;
+    color: #f1f1f1;
+    font-size: 16px;
+    
   }
 }
