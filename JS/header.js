@@ -26,11 +26,10 @@ if (token === null) {
 
       <nav>
         <ul class="nav">
-          <li class="mobile-only user-profile-header">
-          <a href="login.html">Login</a> 
-          </li>
-          <li cla><a href="home.html" class="home">Home</a></li>
-          <li><a href="about.html"  class="about-us">About</a></li>
+        <li cla><a href="home.html" class="home">Home</a></li>
+        <li><a href="about.html"  class="about-us">About</a></li>
+        <li class="mobile-only user-profile-header">
+        <a href="login.html">Login</a> </li>
           <li class="mobile-only "><a href="reg.html">Resgister</a></li>
         </ul>
       </nav>
