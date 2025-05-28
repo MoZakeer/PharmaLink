@@ -29,6 +29,8 @@ if (token === null) {
           <li class="mobile-only user-profile-header">
           <a href="login.html">Login</a>
           </li>
+          <li cla><a href="home.html" class="home">Home</a></li>
+          <li><a href="about.html"  class="about-us">About</a></li>
           <li class="mobile-only "><a href="reg.html">Resgister</a></li>
         </ul>
       </nav>
@@ -81,6 +83,7 @@ if (token === null) {
           <li><a href="search.html" class='Search'>Search</a></li>
           <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
           <li><a href="Cart.html" class='cart'>Cart</a></li>
+          <li ><a href="about.html" class="about-us">About</a></li>
           <li class="mobile-only logout"><a href="#">Logout</a></li>
         </ul>
       </nav>
@@ -104,7 +107,7 @@ if (token === null) {
       "afterbegin",
       `<header class="main-header">
   <div class="container">
-    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+    <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
 
     <i class="fa-solid fa-bars menu-toggle"></i>
 
@@ -114,6 +117,7 @@ if (token === null) {
         <li><a href="home.html" class='home'>Home</a></li>
         <li><a href="Orders.html" class="orders">Orders</a></li>
         <li><a href="products.html" class="products">Product</a></li>
+        <li ><a href="about.html"  class="about-us">About</a></li>
         <li class="mobile-only logout"><a href="#">Logout</a></li>
       </ul>
     </nav>
@@ -122,7 +126,7 @@ if (token === null) {
       <li>
         <a href="profile-company.html" class="user-profile-header">
           <i class="fa-regular fa-circle-user"></i>
-          <span>     Profile                         </span>
+          <span>Profile</span>
         </a>
       </li>
       <li>
@@ -137,7 +141,7 @@ if (token === null) {
       "afterbegin",
       `<header class="main-header">
   <div class="container">
-    <a href="#"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
+    <a href="home.html"><img src="images/logo.svg" alt="Logo" class="logo" /></a>
 
     <i class="fa-solid fa-bars menu-toggle"></i>
 
@@ -146,6 +150,7 @@ if (token === null) {
         <li><a href="home.html" class='home'>Home</a></li>
         <li><a href="company.html" class="company">Company</a></li>
         <li><a href="request.html" class="requests">Requests</a></li>
+        <li><a href="about.html"  class="about-us">About</a></li>
         <li class="mobile-only logout"><a href="#">Logout</a></li>
       </ul>
     </nav>

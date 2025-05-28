@@ -2,10 +2,14 @@ let footer = ``;
 if (type === "Pharmacy")
   footer = `  <li><a href="search.html" class='Search'>Search</a></li>
                 <li><a href="pharmacy_invoice.html" class='history'>History</a></li>
-                <li><a href="Cart.html" class='cart'>Cart</a></li>`;
+                <li><a href="Cart.html" class='cart'>Cart</a></li>
+                <li><a href="about.html" class='about-us'>About Us</a></li>
+                `;
 else if (type === "Company")
   footer = `<li><a href="Orders.html" class="orders">Orders</a></li>
-              <li><a href="products.html" class="products">Product</a></li>`;
+              <li><a href="products.html" class="products">Product</a></li>
+              <li><a href="about.html" class='about-us'>About Us</a></li>
+              `;
 document.querySelector("body").insertAdjacentHTML(
   "beforeend",
   `<footer class="footer">

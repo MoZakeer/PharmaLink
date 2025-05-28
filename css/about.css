@@ -1,0 +1,37 @@
+.container{
+  margin: auto !important;
+  margin-bottom: 3rem !important;
+}
+*{
+  font-family: "Open Sans", sans-serif;
+
+}
+h1 {
+  position: relative;
+  margin: 2.5rem auto !important;
+}
+h1::before,
+h1::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: #008682;
+  position: absolute;
+  bottom: -20px;
+  transition: 0.5s;
+}
+
+h1::before {
+  left: 50%;
+}
+h1::after {
+  right: 50%;
+}
+h1:hover::after {
+  width: 50%;
+  right: 0;
+}
+h1:hover::before {
+  left: 0;
+  width: 50%;
+}
