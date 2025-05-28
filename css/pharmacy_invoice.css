@@ -74,7 +74,7 @@ main table td {
   font-size: 1.8rem;
   color: #333;
 }
-main table td:last-child{
+main table td:last-child {
   text-align: end;
 }
 main tbody tr {
@@ -100,6 +100,8 @@ main tbody td a {
   transition: all 0.2s ease;
   font-size: 1.6rem;
   background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .btn:hover {
@@ -123,27 +125,12 @@ main tbody td a {
 /* Small Screen (Phones) */
 @media (max-width: 767px) {
   html {
-    font-size: 50%;
+    font-size: 33%;
   }
 
   .container {
     padding: 0 10px;
   }
-  main table {
-    display: block;
-    white-space: nowrap;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  main table th,
-  main table td {
-    font-size: 1.4rem;
-    padding: 1rem;
-    white-space: nowrap;
-  }
-
   .btn {
     width: auto;
     font-size: 1.4rem;
