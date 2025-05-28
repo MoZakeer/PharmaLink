@@ -13,7 +13,9 @@ const displaySelectedInvioces = function (pharmacyInvoices, selectedState) {
             <td>${city}</td>
             <td>${dateFormat(orderDate)}</td>
             <td>${statusOrder}</td>
-            <td><button class="btn invoice">invoice</button></td>
+            <td><button class="btn invoice">
+            <i class="fa-solid fa-receipt" style="color: #a5b3ca;"></i>
+            invoice</button></td>
           </tr>`;
     if (statusOrder === selectedState)
       invoicesBody.insertAdjacentHTML("afterbegin", html);
