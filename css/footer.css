@@ -46,6 +46,7 @@
   color: #d0e8e8;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 16px;
 }
 
 .footer a:hover {
@@ -60,7 +61,7 @@
 
 .social-link {
   display: inline-block;
-  transition:  0.3s ;
+  transition: 0.3s;
 }
 
 .social-link:hover {
@@ -88,6 +89,6 @@
   font-size: 13px;
   opacity: 0.9;
 }
-.copyright span{
+.copyright span {
   font-weight: bold;
 }
