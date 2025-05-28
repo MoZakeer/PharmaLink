@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 /* Footer Styles */
 .footer {
   box-sizing: border-box;

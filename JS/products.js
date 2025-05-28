@@ -106,6 +106,40 @@ function validateInputs() {
 // Function to create a new item
 async function createItem() {
   if (!validateInputs()) return;
+  // Fetch current medicines to check for duplicates
+  try {
+    const response = await fetch(
+      "https://pharmalink.runasp.net/api/Medicine/CompanyMedicnines",
+      {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+
+    if (!response.ok) throw new Error("Failed to fetch existing medicines.");
+
+    const medicines = await response.json();
+
+    const duplicate = medicines.find(
+      (m) =>
+        m.medicineName.trim().toLowerCase() ===
+        titleInput.value.trim().toLowerCase()
+    );
+
+    if (duplicate) {
+      showNotification(
+        "This medicine already exists. You can update its quantity instead.",
+        false
+      );
+      return;
+    }
+  } catch (error) {
+    console.error("Error checking for duplicates:", error);
+    alert("Error checking for existing medicines.");
+    return;
+  }
 
   const file = imageInput.files[0];
   if (!file) {
@@ -146,6 +180,7 @@ async function createItem() {
     }
 
     // alert("Medicine created successfully!");
+    showNotification("Medicine added successfully!", true);
     clearForm();
     getCompanyMedicines();
   } catch (error) {
