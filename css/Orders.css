@@ -44,7 +44,6 @@ ul {
   list-style: none;
 }
 
-
 /* Start page Content */
 main .container {
   font-size: 1.6rem;
@@ -126,3 +125,6 @@ main table td:first-child {
   background-color: rgb(153, 29, 41);
 }
 /* End page Content */
+html {
+  min-width: 800px;
+}

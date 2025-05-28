@@ -6,6 +6,7 @@
 }
 html {
   font-size: 62.5%;
+  min-width: 500px;
 }
 :root {
   --main-color: #008682;
@@ -17,8 +18,8 @@ html {
   padding-left: 15px;
   padding-right: 15px;
 }
- 
-thead{
+
+thead {
   margin-bottom: 30px;
 }
 /* Small Screen */
@@ -26,7 +27,7 @@ thead{
   .container {
     width: 680px;
   }
-  table{
+  table {
     font-size: 12px;
   }
 
@@ -34,14 +35,12 @@ thead{
   table th {
     padding: 4px !important;
     white-space: normal !important;
-
   }
 
   .btn {
     padding: 2px 4px;
     font-size: 12px;
   }
-  
 }
 
 /* median Screen */
@@ -83,7 +82,7 @@ header .sign #reg:hover {
   color: white;
   border: none;
   border-radius: 5px;
-   padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
   width: 100%;
   margin-top: 1rem;
 }
@@ -100,7 +99,7 @@ header .sign #reg:hover {
   border-radius: 5px;
   padding: 5px 0;
 }
- 
+
 .table {
   font-size: 16px;
 }
@@ -116,7 +115,6 @@ thead {
   word-break: break-all;
   max-width: 200px;
 }
- 
 
 .create-btn {
   background-color: #00a896;
@@ -129,8 +127,8 @@ thead {
 }
 .create-btn:hover,
 .search-btn:hover,
-.update-btn:hover ,
-.btn-info:hover{
+.update-btn:hover,
+.btn-info:hover {
   background-color: #045657;
   color: white;
 }
@@ -143,7 +141,7 @@ thead {
   width: 100%;
   margin-top: 1rem;
 }
-#trh{
+#trh {
   margin-bottom: 2rem;
 }
 th,
@@ -154,7 +152,6 @@ td {
 thead {
   border-bottom: 2px solid black;
   margin-top: 1rem;
-  
 }
 th {
   margin: 1rem 0 !important;
@@ -165,7 +162,7 @@ input[type="number"],
 input[type="url"] {
   background-color: #e0e0e0;
   border: none;
-   padding: .7rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   margin-top: 0.5rem;
   font-size: 20px;
 }
@@ -180,24 +177,23 @@ table {
   border-collapse: collapse;
   border: none;
 }
-h1{
+h1 {
   margin-top: 30px;
 }
 .upload-label:hover {
-  color: white !important; 
+  color: white !important;
   background-color: #bc9738;
 }
 
-.btn-info{
+.btn-info {
   background-color: var(--main-color);
-    color: white;
+  color: white;
 }
 .btn-info,
-.btn-danger{
-  padding: .5rem;
+.btn-danger {
+  padding: 0.5rem;
   font-size: 14px;
-
 }
-.btn{
+.btn {
   border-radius: 10px;
 }
