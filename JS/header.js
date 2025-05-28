@@ -26,7 +26,7 @@ if (token === null) {
 
       <nav>
         <ul class="nav">
-        <li cla><a href="home.html" class="home">Home</a></li>
+        <li><a class="home" href="home.html">Home</a></li>
         <li><a href="about.html"  class="about-us">About</a></li>
         <li class="mobile-only user-profile-header">
         <a href="login.html">Login</a> </li>
