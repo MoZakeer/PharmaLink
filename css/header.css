@@ -318,9 +318,14 @@
   border-radius: 0.5rem;
   color: #fff;
   margin-left: -8rem;
+  transition: 0.3s;
 }
 .main-header .register {
   margin: 0;
+}
+.login:hover,
+.register:hover {
+  background-color: var(--hover-color);
 }
 /* Hide profile/logout on larger screens */
 .main-header .mobile-only {
@@ -378,12 +383,12 @@
   .notification {
     top: 40px;
     width: 300px;
-    padding: .7rem;
+    padding: 0.7rem;
   }
   .notification p {
     font-size: 14px;
   }
-  .notification-close{
+  .notification-close {
     font-size: 15px;
   }
   .main-header {
