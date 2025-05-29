@@ -1,0 +1,11 @@
+:root {
+  --main-color: #008682;
+  --hover-color: #045657;
+}
+.btn-confirm{
+  background-color: var(--main-color);
+  transition: all .3s;
+}
+.btn-confirm:hover{
+  background-color: var(--hover-color);
+}
