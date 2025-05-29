@@ -1,11 +1,14 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
 :root {
   --main-color: #008682;
   --hover-color: #045657;
 }
-.btn-confirm{
+irm {
   background-color: var(--main-color);
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.btn-confirm:hover{
+.btn-confirm:hover {
   background-color: var(--hover-color);
 }
