@@ -377,10 +377,14 @@
 @media (max-width: 767px) {
   .notification {
     top: 40px;
-    width: 250px;
+    width: 300px;
+    padding: .7rem;
   }
   .notification p {
-    font-family: 20px;
+    font-size: 14px;
+  }
+  .notification-close{
+    font-size: 15px;
   }
   .main-header {
     height: 70px;

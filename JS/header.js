@@ -177,7 +177,7 @@ if (token === null) {
   }
 }
 
-document.querySelector("body").insertAdjacentHTML(
+document.querySelector("header").insertAdjacentHTML(
   "beforeend",
   `<div id="notification" class="notification hidden">
         <p id="notification-message">Your item has been added to the cart!</p>

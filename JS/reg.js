@@ -1,3 +1,35 @@
+// Toggle for password
+document.getElementById("togglePassword").addEventListener("click", function () {
+  const passwordInput = document.getElementById("password");
+  const icon = this.querySelector("i");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  } else {
+    passwordInput.type = "password";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  }
+});
+
+// Toggle for confirm password
+document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  const icon = this.querySelector("i");
+
+  if (confirmPasswordInput.type === "password") {
+    confirmPasswordInput.type = "text";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  } else {
+    confirmPasswordInput.type = "password";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  }
+});
+
 const validatePassword = function (password, confirmPassword) {
   if (password !== confirmPassword) {
     return showNotification("passwords are not equal!", false);
