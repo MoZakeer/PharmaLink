@@ -1,5 +1,21 @@
 if (type !== "Pharmacy") location.href = '../home.html';
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
 
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  document.querySelector("body").style.overflow = "hidden";
+
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+  document.querySelector("body").style.overflow = "auto";
+};
 const createPrice = function (totalPrice) {
   const price = new Intl.NumberFormat("DE", {
     style: "currency",
@@ -107,23 +123,17 @@ const updatelist = function () {
       localStorage.setItem("userName", arr[i]["companyUserName"]);
     });
     const item = document.querySelector(`#img-${i}`);
-    const descriptionBox = document.getElementById("descriptionBox");
+    const head = document.querySelector(".name-med");
+    const body = document.querySelector(".description-med");
 
-    item.addEventListener("mouseover", (e) => {
-      const desc = arr[i]["description"] || "No description available";
-      descriptionBox.textContent = desc;
-      descriptionBox.classList.remove("hidden");
+    item.addEventListener('click', function () {
+      head.textContent = arr[i]["medicineName"];
+      body.textContent = arr[i]["description"];
+      openModal();
     });
+    btnCloseModal.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
 
-    item.addEventListener("mousemove", (e) => {
-      // position near cursor
-      descriptionBox.style.left = e.pageX + 10 + "px";
-      descriptionBox.style.top = e.pageY + 10 + "px";
-    });
-
-    item.addEventListener("mouseout", () => {
-      descriptionBox.classList.add("hidden");
-    });
   }
 };
 
