@@ -67,6 +67,9 @@ ul {
 body {
   font-size: 14px;
 }
+div.content{
+  min-height: 100vh;
+}
 #tableBody {
   text-align: center;
 }
