@@ -5,7 +5,7 @@
   --main-color: #008682;
   --hover-color: #045657;
 }
-irm {
+.btn-confirm {
   background-color: var(--main-color);
   transition: all 0.3s;
 }
