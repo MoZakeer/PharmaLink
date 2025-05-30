@@ -5,10 +5,10 @@
   --main-color: #008682;
   --hover-color: #045657;
 }
-.btn-confirm {
-  background-color: var(--main-color);
+.btn-confirm{
+  background-color: var(--main-color) !important;
   transition: all 0.3s;
 }
 .btn-confirm:hover {
-  background-color: var(--hover-color);
+  background-color: var(--hover-color) !important;
 }
