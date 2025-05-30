@@ -10,8 +10,8 @@ const labelTotalPrice = document.querySelector(".total");
 const btnCancel = document.querySelector(".cancel");
 // GET ORDER ID FOR CURRENT PHARMACY...
 // Get orderId from URL
-  const params = new URLSearchParams(window.location.search);
-  const orderId = params.get("orderId");
+const params = new URLSearchParams(window.location.search);
+const orderId = params.get("orderId");
 // URL'S
 const pharmacyInoiceURL = "https://pharmalink.runasp.net/api/Order/Invoice/";
 const cancelOrderURL = "https://pharmalink.runasp.net/api/Order/Cancel/";
@@ -132,5 +132,6 @@ const displayCancelBtn = function (state) {
 };
 btnCancel.addEventListener("click", async function (e) {
   await cancelOrder(`${cancelOrderURL}${orderId}`, token);
+  localStorage.setItem("message", "Order has been canceled successfully");
   window.location.href = "pharmacy_invoice.html";
 });

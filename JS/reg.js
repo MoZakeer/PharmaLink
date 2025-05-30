@@ -99,7 +99,7 @@ async function register(event) {
 
     const data = await response.json();
     if (response.ok) {
-      localStorage.setItem("message", "Your request has been sent and you'll receive a response soon");
+      localStorage.setItem("message", "please check your email to activate your account");
       window.location.href = "home.html"
     } else {
       showNotification("the email or username is used", false);

@@ -77,7 +77,7 @@ document
       );
       if (!response.ok) {
         const errorData = await response.json();
-        showNotification("the email or password is used");
+        showNotification("the email or username is used");
         return;
       }
 
