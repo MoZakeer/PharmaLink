@@ -1,5 +1,5 @@
 "use strict";
-if (type !== "Pharmacy") location.href = '../home.html';
+if (type !== "Pharmacy") window.location.href = 'home.html';
 document.querySelector(".history").classList.add("active");
 
 // ELEMENTS

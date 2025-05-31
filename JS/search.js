@@ -1,4 +1,4 @@
-if (type !== "Pharmacy") location.href = '../home.html';
+if (type !== "Pharmacy") window.location.href = 'home.html';
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');

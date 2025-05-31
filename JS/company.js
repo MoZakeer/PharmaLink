@@ -12,7 +12,7 @@ eyeIcon.addEventListener("click", () => {
     eyeIcon.classList.add("fa-eye-slash");
   }
 });
-if (type !== "Admin") location.href = '../home.html';
+if (type !== "Admin") window.location.href = 'home.html';
 
 const validatePassword = function (password) {
   if (password.length < 8) {
