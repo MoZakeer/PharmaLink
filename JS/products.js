@@ -1,4 +1,4 @@
-if (type !== "Company") location.href = "../home.html";
+if (type !== "Company") window.location.href = 'home.html';
 
 const API_URL = "https://pharmalink.runasp.net/api/Medicine";
 document.querySelector(".products").classList.add("active");
