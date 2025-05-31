@@ -136,3 +136,65 @@ h2 {
     display: none;
   }
 }
+/* Message */
+.notification {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #c91432;
+  color: white;
+  padding: 0.7rem 2rem;
+  font-size: var(--font-size-medium);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--white);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 550px;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.notification.hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px);
+  pointer-events: none;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: fit-content;
+}
+
+.notification-close:hover {
+  color: var(--hover-color);
+}
+.notification p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--white);
+}
+@media (max-width: 767px) {
+  .notification {
+    top: 40px;
+    width: 300px;
+    padding: 0.7rem;
+  }
+  .notification p {
+    font-size: 14px;
+  }
+  .notification-close {
+    font-size: 15px;
+  }
+  .main-header {
+    height: 70px;
+  }
+}
