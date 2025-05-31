@@ -67,7 +67,7 @@ ul {
 body {
   font-size: 14px;
 }
-div.content{
+div.content {
   min-height: 100vh;
 }
 #tableBody {
@@ -199,4 +199,7 @@ h1 {
 }
 .btn {
   border-radius: 10px;
+}
+.hidden {
+  display: none;
 }
