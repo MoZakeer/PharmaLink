@@ -1,34 +1,38 @@
 // Toggle for password
-document.getElementById("togglePassword").addEventListener("click", function () {
-  const passwordInput = document.getElementById("password");
-  const icon = this.querySelector("i");
+document
+  .getElementById("togglePassword")
+  .addEventListener("click", function () {
+    const passwordInput = document.getElementById("password");
+    const icon = this.querySelector("i");
 
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  } else {
-    passwordInput.type = "password";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  }
-});
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    } else {
+      passwordInput.type = "password";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    }
+  });
 
 // Toggle for confirm password
-document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
-  const confirmPasswordInput = document.getElementById("confirmPassword");
-  const icon = this.querySelector("i");
+document
+  .getElementById("toggleConfirmPassword")
+  .addEventListener("click", function () {
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+    const icon = this.querySelector("i");
 
-  if (confirmPasswordInput.type === "password") {
-    confirmPasswordInput.type = "text";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  } else {
-    confirmPasswordInput.type = "password";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  }
-});
+    if (confirmPasswordInput.type === "password") {
+      confirmPasswordInput.type = "text";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    } else {
+      confirmPasswordInput.type = "password";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash");
+    }
+  });
 
 const validatePassword = function (password, confirmPassword) {
   if (password !== confirmPassword) {
@@ -99,8 +103,11 @@ async function register(event) {
 
     const data = await response.json();
     if (response.ok) {
-      localStorage.setItem("message", "Your request has been sent and you'll receive a response soon");
-      window.location.href = "home.html"
+      localStorage.setItem(
+        "message",
+        "Your request has been sent Please Confirm Your Emali"
+      );
+      window.location.href = "home.html";
     } else {
       showNotification("the email or username is used", false);
     }
