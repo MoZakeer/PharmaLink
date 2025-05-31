@@ -37,7 +37,7 @@ function displayMedicines(medicines) {
     // console.log("name here",medicine.medicineName)
     const row = document.createElement("tr");
     row.innerHTML = `
-      <td>${medicine.id}</td>
+      <td class='hidden' >${medicine.id}</td>
       <td>${medicine.medicineName}</td>
       <td>${medicine.price}</td>
       <td>${medicine.inStock}</td>
