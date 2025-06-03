@@ -12,7 +12,7 @@ eyeIcon.addEventListener("click", () => {
     eyeIcon.classList.add("fa-eye-slash");
   }
 });
-if (type !== "Admin") location.href = '../home.html';
+if (type !== "Admin") window.location.href = 'home.html';
 
 const validatePassword = function (password) {
   if (password.length < 8) {
@@ -77,7 +77,7 @@ document
       );
       if (!response.ok) {
         const errorData = await response.json();
-        showNotification("the email or password is used");
+        showNotification("the email or username is used");
         return;
       }
 

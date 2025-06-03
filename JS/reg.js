@@ -103,11 +103,16 @@ async function register(event) {
 
     const data = await response.json();
     if (response.ok) {
+<<<<<<< HEAD
       localStorage.setItem(
         "message",
         "Your request has been sent Please Confirm Your Emali"
       );
       window.location.href = "home.html";
+=======
+      localStorage.setItem("message", "please check your email to activate your account");
+      window.location.href = "home.html"
+>>>>>>> 8d473750bd85a301708245de918e67c869c502a0
     } else {
       showNotification("the email or username is used", false);
     }

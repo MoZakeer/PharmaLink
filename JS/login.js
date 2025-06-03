@@ -61,8 +61,31 @@ function login(event) {
     })
     .catch((error) => {
       console.error("An error occurred:", error);
-      alert("Login failed. Please try again.");
+      showNotification("Invalid username or password", 0);
     });
 }
 
 document.getElementById("loginForm").addEventListener("submit", login);
+
+// Message
+function showNotification(message, ok = 2) {
+  const notification = document.getElementById("notification");
+  const notificationMessage = document.getElementById("notification-message");
+  const closeButton = document.getElementById("notification-close");
+  if (ok == 2)
+    (message = "⚠️" + message),
+      (notification.style.backgroundColor = " #C5C75D");
+  else notification.style.backgroundColor = ok ? " #1bbb4b" : "#C91432";
+
+  notificationMessage.textContent = message;
+
+  notification.classList.remove("hidden");
+
+  setTimeout(() => {
+    notification.classList.add("hidden");
+  }, 3000);
+
+  closeButton.addEventListener("click", () => {
+    notification.classList.add("hidden");
+  });
+}

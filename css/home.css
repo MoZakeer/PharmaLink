@@ -62,7 +62,6 @@ ul {
    ========================================= */
 .hero {
   position: relative;
-  margin-bottom: 6rem;
   overflow: hidden;
   height: 100vh;
   display: flex;

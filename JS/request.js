@@ -1,5 +1,5 @@
 "use strict";
-if (type !== "Admin") location.href = '../home.html';
+if (type !== "Admin") window.location.href = 'home.html';
 document.querySelector(".requests").classList.add("active");
 // URLS
 const allRequestsURL = "https://pharmalink.runasp.net/api/requests";
