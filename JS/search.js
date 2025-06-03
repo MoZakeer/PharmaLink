@@ -1,4 +1,4 @@
-if (type !== "Pharmacy") location.href = '../home.html';
+if (type !== "Pharmacy") location.href = "../home.html";
 
 const createPrice = function (totalPrice) {
   const price = new Intl.NumberFormat("DE", {
@@ -43,6 +43,23 @@ const addtr = function (arr) {
   const boxes = document.querySelector("tbody");
   boxes.innerHTML = "";
   let c = 0;
+  ///////////////////////////start lazy loading.../////////////////
+  const imgloading = function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      const target = entry.target;
+      target.src = target.dataset.src;
+      target.addEventListener("load", function () {
+        target.classList.remove("lazy-img");
+        observer.unobserve(target);
+      });
+    });
+  };
+  const lazyObserver = new IntersectionObserver(imgloading, {
+    root: null,
+    threshold: 0,
+  });
+  ///////////////////////////end lazy loading.../////////////////
 
   for (let i of arr) {
     let img =
@@ -52,7 +69,8 @@ const addtr = function (arr) {
       "beforeend",
       `<tr>
             <td>${i["medicineName"]}</td>
-            <td> <a href="profile-company.html" title="Go to profile" class='link${c}'>${i["companyName"]
+            <td> <a href="profile-company.html" title="Go to profile" class='link${c}'>${
+        i["companyName"]
       }</a></td>
             <td>${createPrice(i["price"])}</td>
             <td>${i["inStock"] > 0 ? i["inStock"] : "Not available"}</td>
@@ -62,10 +80,12 @@ const addtr = function (arr) {
             <span class="button__icon"><svg class="svg" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></span>
             </button>
             <td>
-            <img src="${img}" alt="Image" id="img-${c++}" />
+            <img src="images/Zakeer.jpg" class='lazy-img' data-src=${img} alt="Image" id="img-${c++}" />
             </td>
             </tr>`
     );
+    const currImg = document.querySelector(`#img-${c - 1}`);
+    lazyObserver.observe(currImg);
   }
 };
 let arr = [],
@@ -83,14 +103,16 @@ const updatelist = function () {
       arr.push(i);
     }
   }
-  arr.sort(
-    (a, b) => {
-      let available = 0;
-      if (a['inStock'] && !b['inStock']) available = -1e5;
-      else if (!a['inStock'] && b['inStock']) available = 1e5;
-      return available + (medicine ? a["medicineName"].length - b["medicineName"].length : 0) +
-        (company ? a["companyName"].length - b["companyName"].length : 0);
-    });
+  arr.sort((a, b) => {
+    let available = 0;
+    if (a["inStock"] && !b["inStock"]) available = -1e5;
+    else if (!a["inStock"] && b["inStock"]) available = 1e5;
+    return (
+      available +
+      (medicine ? a["medicineName"].length - b["medicineName"].length : 0) +
+      (company ? a["companyName"].length - b["companyName"].length : 0)
+    );
+  });
   addtr(arr);
   for (let i = 0; i < arr.length; i++) {
     document
